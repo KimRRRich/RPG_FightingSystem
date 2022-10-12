@@ -969,6 +969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6659153952884678048, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
+      propertyPath: StandAttackConf
+      value: 
+      objectReference: {fileID: 11400000, guid: 418ae3d506f18f244805ae38ead8f3d5, type: 2}
     - target: {fileID: 6659153952884678051, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
       propertyPath: m_Name
       value: Player

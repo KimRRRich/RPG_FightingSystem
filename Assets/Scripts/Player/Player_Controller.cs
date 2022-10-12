@@ -26,6 +26,9 @@ public class Player_Controller : FSMControl<PlayerState>
     public Player_Model model { get; private set; }
     public CharacterController characterController  { get; private set; }
 
+    //∆’Õ®π•ª˜≈‰÷√
+    public Conf_SkillData StandAttackConf;
+
    
 
 
