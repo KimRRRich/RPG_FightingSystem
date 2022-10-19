@@ -36,6 +36,15 @@ public class Skill_HitModel
 {
     //伤害数值
     public int DamageValue;
+    //硬质时间
+    public float HardTime;
+    //击飞击退
+    public Vector3 RepelVelocity;
+    //击飞击退的过度时间
+    public float RepelTransitionTime;
+    //命中效果
+    public Conf_SkillHitEF SkillHitEF;
+
 }
 
 /// <summary>
@@ -44,5 +53,22 @@ public class Skill_HitModel
 [Serializable]
 public class Skill_EndModel
 {
+    
+}
+
+/// <summary>
+/// 技能产生物体，粒子
+/// </summary>
+[Serializable]
+public class Skill_SpawnObj
+{
+    //生成的预制体
+    public GameObject Prefab;
+    //生成的音效
+    public AudioClip AudioClip;
+    //位置
+    public Vector3 Position;
+    //旋转
+    public Vector3 Rotation;
 
 }

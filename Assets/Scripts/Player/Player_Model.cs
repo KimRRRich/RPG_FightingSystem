@@ -8,12 +8,22 @@ public class Player_Model : MonoBehaviour
     private Player_Controller player;
     private Animator animator;
     public WeaponCollider WeaponConllider;
+
+
+    //当前技能数据
+    private Conf_SkillData skillData;
     public void Init(Player_Controller player)
     {
         this.player = player;
         animator = GetComponent<Animator>();
-        WeaponConllider.Init();
+        WeaponConllider.Init(this);
     }
+
+    public void PlayAudio(AudioClip audioClip)
+    {
+        player.audio.PlayAudio(audioClip);
+    }
+
     //更新移动相关参数
     public void UpdateMovePar(float x, float y)//前后和左右
     {
@@ -23,8 +33,9 @@ public class Player_Model : MonoBehaviour
 
     }
 
-    public void StartAttack()
+    public void StartAttack(Conf_SkillData conf)
     {
+        skillData = conf;
         animator.SetBool("攻击", true);
     }
 
@@ -36,7 +47,7 @@ public class Player_Model : MonoBehaviour
     {
         //开启刀光的拖尾
         //开启伤害检测的触发器
-        WeaponConllider.StartSkillHit();
+        WeaponConllider.StartSkillHit(skillData.HitModel);
     }
 
     //停止技能伤害

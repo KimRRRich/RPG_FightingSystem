@@ -9,13 +9,13 @@ public class Monster_Controller : MonoBehaviour
     private int hp = 100;
 
     //是否击飞
-    private bool isHurt;
+    private bool isRepel;
     //受击向量
-    private Vector3 hurtVelocity;
+    private Vector3 repelVelocity;
     //受击过渡时间
-    private float hurtTime;
+    private float repelTime;
     //现在时间
-    private float currentHurtTime;
+    private float currentRepelTime;
 
     public void Start()
     {
@@ -26,12 +26,12 @@ public class Monster_Controller : MonoBehaviour
 
     private void Update()
     {
-        if (isHurt)
+        if (isRepel)
         {
-            currentHurtTime += Time.deltaTime;
+            currentRepelTime += Time.deltaTime;
             //用hurtTime的时间移动hurtVelocity的距离
-            characterController.Move(hurtVelocity * Time.deltaTime/hurtTime);
-            if (currentHurtTime >= hurtTime) isHurt = false;
+            characterController.Move(repelVelocity * Time.deltaTime/ repelTime);
+            if (currentRepelTime >= repelTime) isRepel = false;
         }
         else
         {
@@ -39,21 +39,23 @@ public class Monster_Controller : MonoBehaviour
         }
     }
 
-    public void Hurt()
+    public void Hurt(float hardTime,Transform sourceTransform,Vector3 repelVelocity,float repelTransitionTime,int damageValue)
     {
+
         //硬质与播放动画
         model.PlayHurtAnimation();
+        //取消之前可能还在执行中的硬直
         CancelInvoke("HurtOver");
-        Invoke("HurtOver", 1);
+        Invoke("HurtOver", hardTime);
 
         //击退击飞
-        isHurt = true;
-        hurtVelocity = new Vector3(0, 1, 1);
-        hurtTime = 0.2f;
-        currentHurtTime = 0.0f;
+        isRepel = true;
+        this.repelVelocity = sourceTransform.TransformDirection(repelVelocity);
+        repelTime = repelTransitionTime;
+        currentRepelTime = 0.0f;
 
         //生命值减少
-        hp -= 10;
+        hp -= damageValue;
     }
 
     public void HurtOver()

@@ -374,6 +374,7 @@
 "Assets/Scripts/Base/FSMController.cs"
 "Assets/Scripts/Base/StateBase.cs"
 "Assets/Scripts/Conf/Conf_SkillData.cs"
+"Assets/Scripts/Conf/Conf_SkillHitEF.cs"
 "Assets/Scripts/Monster/Monster_Controller.cs"
 "Assets/Scripts/Monster/Monster_Model.cs"
 "Assets/Scripts/Player/Player_Audio.cs"

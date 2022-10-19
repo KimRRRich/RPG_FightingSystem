@@ -9,14 +9,21 @@ public class WeaponCollider : MonoBehaviour
 
     private List<GameObject> monsterList;
 
-    public void Init()
+    private Player_Model model;
+
+    //当前技能的命中数据
+    private Skill_HitModel hitModel;
+
+    public void Init(Player_Model model)
     {
         BoxCollider.enabled = false;
         TrailRenderer.emitting = false;
         monsterList = new List<GameObject>();
+        this.model= model ;
     }
-   public void StartSkillHit()
+   public void StartSkillHit(Skill_HitModel hitModel)
     {
+        this.hitModel = hitModel;
         BoxCollider.enabled = true;
         TrailRenderer.emitting = true;
     }
@@ -35,7 +42,29 @@ public class WeaponCollider : MonoBehaviour
         {
             monsterList.Add(other.gameObject);
             //实际输出伤害给敌人
-            other.GetComponent<Monster_Controller>().Hurt();
+            other.GetComponent<Monster_Controller>().Hurt(hitModel.HardTime,model.transform,hitModel.RepelVelocity,hitModel.RepelTransitionTime,hitModel.DamageValue);
+            if (hitModel.SkillHitEF != null)
+            {
+                //生成粒子-在命中的地方   closets。。。 传一个坐标，获取这个坐标和触发器的碰撞点
+                SpawnObjectByHit(hitModel.SkillHitEF.Spawn, other.ClosestPointOnBounds(transform.position));
+
+                //播放音效
+                if (hitModel.SkillHitEF.AudioClip != null) model.PlayAudio(hitModel.SkillHitEF.AudioClip);
+                
+            }
+        }
+    }
+
+    //产生物体 基于命中
+    private void SpawnObjectByHit(Skill_SpawnObj spawn,Vector3 spawnPoint)
+    {
+        if (spawn != null && spawn.Prefab != null)
+        {
+            GameObject temp = GameObject.Instantiate(spawn.Prefab, null);
+            temp.transform.position = spawnPoint + spawn.Position;
+            temp.transform.LookAt(Camera.main.transform);  //可要可不要
+            temp.transform.eulerAngles += spawn.Rotation;
+            model.PlayAudio(spawn.AudioClip);
         }
     }
 

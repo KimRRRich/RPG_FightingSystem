@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b520d4a45be18324183d76961b2afdd3, type: 3}
   m_Name: "\u6280\u80FD\u914D\u7F6E"
   m_EditorClassIdentifier: 
+  Name: 
+  HitModel:
+    DamageValue: 10
+    HardTime: 1
+    RepelVelocity: {x: 0, y: 0, z: 0.3}
+    RepelTransitionTime: 0.2
+    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
