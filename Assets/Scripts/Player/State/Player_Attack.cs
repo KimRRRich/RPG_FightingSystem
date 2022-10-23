@@ -19,7 +19,17 @@ public class Player_Attack : StateBase<PlayerState>
 
     public override void OnExit()  { }
 
-    public override void OnUpdate(){ }
+    public override void OnUpdate()
+    {
+        //×ªÏò
+        if (player.CurrSkillData.ReleaseModel.CanRotate)
+        {
+            //Ðý×ª
+            Vector3 rot = new Vector3(0, player.input.Horizontal, 0);
+            player.transform.Rotate(rot * Time.deltaTime * 60);
+        }
+    
+    }
     
     
 }

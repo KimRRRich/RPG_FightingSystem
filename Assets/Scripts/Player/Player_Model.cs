@@ -12,6 +12,10 @@ public class Player_Model : MonoBehaviour
 
     //当前技能数据
     private Conf_SkillData skillData;
+
+    //是否可以切换
+    public bool canSwitch { get; private set; }
+
     public void Init(Player_Controller player)
     {
         this.player = player;
@@ -36,7 +40,21 @@ public class Player_Model : MonoBehaviour
     public void StartAttack(Conf_SkillData conf)
     {
         skillData = conf;
-        animator.SetBool("攻击", true);
+        canSwitch = false;
+        animator.SetTrigger(skillData.TriggerName);
+    }
+
+    //产生物体 基于命中
+    private void SpawnObject(Skill_SpawnObj spawn)
+    {
+        if (spawn != null && spawn.Prefab != null)
+        {
+            GameObject temp = GameObject.Instantiate(spawn.Prefab, null);
+            temp.transform.position =transform.position + spawn.Position;
+            //temp.transform.LookAt(Camera.main.transform);  //可要可不要
+            temp.transform.eulerAngles =player.transform.eulerAngles+spawn.Rotation;
+            PlayAudio(spawn.AudioClip);
+        }
     }
 
 
@@ -48,6 +66,14 @@ public class Player_Model : MonoBehaviour
         //开启刀光的拖尾
         //开启伤害检测的触发器
         WeaponConllider.StartSkillHit(skillData.HitModel);
+
+        //生成释放时的游戏物体/粒子
+        SpawnObject(skillData.ReleaseModel.SpawnObj);
+
+        //音效
+        PlayAudio(skillData.ReleaseModel.AudioClip);
+
+
     }
 
     //停止技能伤害
@@ -61,10 +87,20 @@ public class Player_Model : MonoBehaviour
 
     public void SkillOver()
     {
-        animator.SetBool("攻击", false);
+        //基于结束配置生成粒子/游戏物体
+        SpawnObject(skillData.EndModel.SpawnObj);
+
+        animator.SetTrigger(skillData.OverTriggerName);
+        player.CurrAttackIndex = 0;
         player.ChangeState<Player_Move>(PlayerState.Player_Move);
     }
-    
+
+    //技能可以切换
+    private void SkillCanSwitch()
+    {
+        canSwitch = true;
+    }
+
 
     #endregion
 

@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
+  StandAttackConf: {fileID: 11400000, guid: 418ae3d506f18f244805ae38ead8f3d5, type: 2}
 --- !u!143 &6659153952884678063
 CharacterController:
   m_ObjectHideFlags: 0

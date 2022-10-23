@@ -70,6 +70,7 @@
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Scripts\WeaponCollider.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_Attack.cs" />
+    <Compile Include="Assets\Scripts\Conf\Conf_SkillHitEF.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_DeleteAfterDelay.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_RandomDir.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="Assets\Scripts\Player\Player_Audio.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
-    <Compile Include="Assets\Scripts\Conf\Conf_SkillHitEF.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />

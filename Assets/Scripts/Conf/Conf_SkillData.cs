@@ -9,6 +9,12 @@ public class Conf_SkillData : ScriptableObject
     //技能名称
     public string Name;
 
+    //技能触发的动画TriggerName
+    public string TriggerName;
+
+    //技能结束触发的动画TriggerName
+    public string OverTriggerName;
+
     //释放数据
     public Skill_ReleaseModel ReleaseModel;
 
@@ -25,7 +31,12 @@ public class Conf_SkillData : ScriptableObject
 [Serializable]
 public class Skill_ReleaseModel
 {
-
+    //播放粒子/产生游戏物体
+    public Skill_SpawnObj SpawnObj;
+    //播放音效
+    public AudioClip AudioClip;
+    //能否旋转
+    public bool CanRotate;
 }
 
 /// <summary>
@@ -53,7 +64,8 @@ public class Skill_HitModel
 [Serializable]
 public class Skill_EndModel
 {
-    
+    //播放粒子/产生游戏物体
+    public Skill_SpawnObj SpawnObj;
 }
 
 /// <summary>

@@ -16,6 +16,7 @@ public class Player_Audio
     //播放指定的音效
     public void PlayAudio(AudioClip audioClip)
     {
+        if(audioClip!=null)
         audioSource.PlayOneShot(audioClip);
     }
 }

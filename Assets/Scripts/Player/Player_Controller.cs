@@ -27,7 +27,21 @@ public class Player_Controller : FSMControl<PlayerState>
     public CharacterController characterController  { get; private set; }
 
     //普通攻击配置
-    public Conf_SkillData StandAttackConf;
+    public Conf_SkillData[] StandAttackConfs;
+    //当前的技能
+    public Conf_SkillData CurrSkillData { get; private set; }
+
+    // 当前是第几段攻击
+    private int currAttackIndex=0;
+    public int CurrAttackIndex { get => currAttackIndex;
+        set
+        {
+            if (value > StandAttackConfs.Length) currAttackIndex = 0;
+            else currAttackIndex = value;
+        } 
+    }
+
+
 
    
 
@@ -48,15 +62,17 @@ public class Player_Controller : FSMControl<PlayerState>
     //检查攻击状态
     public bool CheckAttck()
     {
-        return input.GetAttackKeyDown();
+        return input.GetAttackKeyDown()&&model.canSwitch;
     }
 
     //普通攻击
     public void StandAttack()
     {
-        model.StartAttack(StandAttackConf);
+        model.StartAttack(StandAttackConfs[currAttackIndex]);
+        CurrSkillData = StandAttackConfs[CurrAttackIndex];
+        currAttackIndex++;
     }
-
+     
     public void PlayAudio(AudioClip audioClip)
     {
         audio.PlayAudio(audioClip);
