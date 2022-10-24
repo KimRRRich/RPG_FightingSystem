@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponCollider : MonoBehaviour
 {
     public BoxCollider BoxCollider;
-    public TrailRenderer TrailRenderer;
+    //public TrailRenderer TrailRenderer;
+    public MeleeWeaponTrail MeleeWeaponTrail;
 
     private List<GameObject> monsterList;
 
@@ -29,13 +30,13 @@ public class WeaponCollider : MonoBehaviour
     {
         this.hitModel = hitModel;
         BoxCollider.enabled = true;
-        TrailRenderer.emitting = true;
+        MeleeWeaponTrail.Emit= true;
     }
 
     public void StopSkillHit()
     {
         BoxCollider.enabled = false;
-        TrailRenderer.emitting = false;
+        MeleeWeaponTrail.Emit = false;
         monsterList.Clear();
     }
 

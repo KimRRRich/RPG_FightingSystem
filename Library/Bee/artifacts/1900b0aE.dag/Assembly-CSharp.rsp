@@ -121,6 +121,7 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"D:/Program Files (x86)/Unity/2021.3.9f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"D:/Program Files (x86)/Unity/2021.3.9f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"D:/Program Files (x86)/Unity/2021.3.9f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -329,6 +330,7 @@
 -r:"D:/StudyMaterials/UnityProjects/RPG战斗系统/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"D:/StudyMaterials/UnityProjects/RPG战斗系统/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"D:/StudyMaterials/UnityProjects/RPG战斗系统/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
@@ -357,6 +359,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Art/MeleeWeaponTrail/Example/Scripts/LookAtTarget.cs"
+"Assets/Art/MeleeWeaponTrail/Example/Scripts/MouseMove.cs"
+"Assets/Art/MeleeWeaponTrail/Example/Scripts/SwooshTest.cs"
+"Assets/Art/MeleeWeaponTrail/Scripts/Interpolate.cs"
+"Assets/Art/MeleeWeaponTrail/Scripts/MeleeWeaponTrail.cs"
 "Assets/Art/粒子/JMO Assets/WarFX/Demo/Assets/CFX_AutoStopLoopedEffect.cs"
 "Assets/Art/粒子/JMO Assets/WarFX/Demo/Assets/CFX_Demo_RandomDir.cs"
 "Assets/Art/粒子/JMO Assets/WarFX/Demo/Assets/CFX_Demo_RotateCamera.cs"
