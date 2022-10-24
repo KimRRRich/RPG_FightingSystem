@@ -16,10 +16,14 @@ public class WeaponCollider : MonoBehaviour
 
     public void Init(Player_Model model)
     {
-        BoxCollider.enabled = false;
-        TrailRenderer.emitting = false;
+        //BoxCollider.enabled = false;
+        //TrailRenderer.emitting = false;
+        //monsterList = new List<GameObject>();
+        //this.model= model ;
+        //StopSkillHit();
         monsterList = new List<GameObject>();
-        this.model= model ;
+        this.model = model;
+        StopSkillHit();
     }
    public void StartSkillHit(Skill_HitModel hitModel)
     {

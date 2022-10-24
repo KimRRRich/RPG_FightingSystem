@@ -14,7 +14,7 @@ public class Player_Model : MonoBehaviour
     private Conf_SkillData skillData;
 
     //是否可以切换
-    public bool canSwitch { get; private set; }
+    public bool canSwitch { get; private set; } = true;
 
     public void Init(Player_Controller player)
     {
@@ -85,14 +85,33 @@ public class Player_Model : MonoBehaviour
     }
 
 
-    public void SkillOver()
-    {
-        //基于结束配置生成粒子/游戏物体
-        SpawnObject(skillData.EndModel.SpawnObj);
+    //public void SkillOver(string skillName)
+    //{
+    //    if (skillName == skillData.Name)
+    //    {
+    //        //基于结束配置生成粒子/游戏物体
+    //        SpawnObject(skillData.EndModel.SpawnObj);
+    //        canSwitch = true;
+    //        animator.SetTrigger(skillData.OverTriggerName);
+    //        player.CurrAttackIndex = 0;
+    //        //animator.SetTrigger(skillData.OverTriggerName);
+    //        player.ChangeState<Player_Move>(PlayerState.Player_Move);
 
-        animator.SetTrigger(skillData.OverTriggerName);
-        player.CurrAttackIndex = 0;
-        player.ChangeState<Player_Move>(PlayerState.Player_Move);
+    //    }
+
+    //}
+    private void SkillOver(string skillName)
+    {
+        if (skillName == skillData.Name)
+        {
+            // 基于结束配置生成粒子/游戏物体
+            SpawnObject(skillData.EndModel.SpawnObj);
+            canSwitch = true;
+            animator.SetTrigger(skillData.OverTriggerName);
+            player.CurrAttackIndex = 0;
+            player.ChangeState<Player_Move>(PlayerState.Player_Move);
+            Debug.Log("SkillOver");
+        }
     }
 
     //技能可以切换

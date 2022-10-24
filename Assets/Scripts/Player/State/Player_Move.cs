@@ -50,7 +50,7 @@ public class Player_Move : StateBase<PlayerState>
 
         //检测攻击 如果玩家按键攻击则切换到攻击状态
         //还需要考虑CD
-        if (player.CheckAttck()) player.ChangeState<Player_Attack>(PlayerState.Player_Attack);
+        if (player.CheckAttack()) player.ChangeState<Player_Attack>(PlayerState.Player_Attack);
 
 
     }

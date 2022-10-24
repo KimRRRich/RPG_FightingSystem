@@ -21,6 +21,10 @@ public class Player_Attack : StateBase<PlayerState>
 
     public override void OnUpdate()
     {
+
+        //检测下一次攻击
+        if(player.CheckAttack()) player.StandAttack();
+
         //转向
         if (player.CurrSkillData.ReleaseModel.CanRotate)
         {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b520d4a45be18324183d76961b2afdd3, type: 3}
   m_Name: "\u666E\u653B2"
   m_EditorClassIdentifier: 
-  Name: "\u666E\u653B1"
+  Name: "\u666E\u653B2"
   TriggerName: "\u666E\u901A\u653B\u51FB"
   OverTriggerName: "\u653B\u51FB\u7ED3\u675F"
   ReleaseModel:
