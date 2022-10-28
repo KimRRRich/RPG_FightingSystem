@@ -57,6 +57,11 @@ public class Player_Model : MonoBehaviour
         }
     }
 
+    public void ScreenImpulse()
+    {
+        player.ScreenImpulse();
+    }
+
 
     #region 动画事件
 
@@ -88,7 +93,7 @@ public class Player_Model : MonoBehaviour
     //public void SkillOver(string skillName)
     //{
     //    if (skillName == skillData.Name)
-    //    {
+    //    { 
     //        //基于结束配置生成粒子/游戏物体
     //        SpawnObject(skillData.EndModel.SpawnObj);
     //        canSwitch = true;

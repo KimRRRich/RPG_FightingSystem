@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public enum PlayerState
 {
@@ -19,6 +20,9 @@ public class Player_Controller : FSMControl<PlayerState>
     public Player_Model model { get; private set; }
     public CharacterController characterController { get; private set; }
 
+
+    //ÆÁÄ»Õñ¶¯Ô´
+    private CinemachineImpulseSource impulseSource;
 
     // ÆÕÍ¨¹¥»÷ÅäÖÃ
     public Conf_SkillData[] StandAttackConfs;
@@ -45,6 +49,7 @@ public class Player_Controller : FSMControl<PlayerState>
         model = transform.Find("Model").GetComponent<Player_Model>();
         model.Init(this);
         characterController = GetComponent<CharacterController>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
 
         // Ä¬ÈÏÊÇÒÆ¶¯×´Ì¬
         ChangeState<Player_Move>(PlayerState.Player_Move);
@@ -67,5 +72,11 @@ public class Player_Controller : FSMControl<PlayerState>
     public void PlayAudio(AudioClip audioClip)
     {
         audio.PlayAudio(audioClip);
+    }
+
+    //ÆÁÄ»Õð¶¯
+    public void ScreenImpulse()
+    {
+        impulseSource.GenerateImpulse();
     }
 }

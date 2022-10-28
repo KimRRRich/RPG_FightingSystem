@@ -28,6 +28,7 @@ MonoBehaviour:
     HardTime: 1
     RepelVelocity: {x: 0, y: 0, z: 0.3}
     RepelTransitionTime: 0.2
+    WantScreenImpulse: 1
     SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
   EndModel:
     SpawnObj:

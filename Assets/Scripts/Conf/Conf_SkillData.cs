@@ -53,6 +53,8 @@ public class Skill_HitModel
     public Vector3 RepelVelocity;
     //击飞击退的过度时间
     public float RepelTransitionTime;
+    //是否需要屏幕震动
+    public bool WantScreenImpulse;
     //命中效果
     public Conf_SkillHitEF SkillHitEF;
 

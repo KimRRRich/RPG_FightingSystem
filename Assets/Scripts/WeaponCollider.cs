@@ -45,9 +45,12 @@ public class WeaponCollider : MonoBehaviour
         //保证一段伤害对一个怪物只造成一段伤害
         if (other.tag == "Monster" && !monsterList.Contains(other.gameObject))
         {
+            //怪物逻辑
             monsterList.Add(other.gameObject);
             //实际输出伤害给敌人
             other.GetComponent<Monster_Controller>().Hurt(hitModel.HardTime,model.transform,hitModel.RepelVelocity,hitModel.RepelTransitionTime,hitModel.DamageValue);
+            
+            //命中 生成相关的逻辑
             if (hitModel.SkillHitEF != null)
             {
                 //生成粒子-在命中的地方   closets。。。 传一个坐标，获取这个坐标和触发器的碰撞点
@@ -57,6 +60,7 @@ public class WeaponCollider : MonoBehaviour
                 if (hitModel.SkillHitEF.AudioClip != null) model.PlayAudio(hitModel.SkillHitEF.AudioClip);
                 
             }
+            if (hitModel.WantScreenImpulse) model.ScreenImpulse();
         }
     }
 
