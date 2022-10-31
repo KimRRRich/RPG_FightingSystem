@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: "\u666E\u653B2"
   TriggerName: "\u666E\u901A\u653B\u51FB"
   OverTriggerName: "\u653B\u51FB\u7ED3\u675F"
+  CameraMoveModels:
+  - Target: {x: 0, y: -0.5, z: 0}
+    Time: 0.3
+    BackTime: 0.2
   ReleaseModel:
     SpawnObj:
       Prefab: {fileID: 0}
@@ -29,6 +33,7 @@ MonoBehaviour:
     RepelVelocity: {x: 0, y: 0.2, z: 0.3}
     RepelTransitionTime: 0.2
     WantScreenImpulse: 1
+    WantChramaticAberration: 0
     SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
   EndModel:
     SpawnObj:

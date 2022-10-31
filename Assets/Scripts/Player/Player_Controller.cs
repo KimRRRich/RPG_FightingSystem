@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening;
 
 public enum PlayerState
 {
@@ -23,6 +24,12 @@ public class Player_Controller : FSMControl<PlayerState>
 
     //屏幕振动源
     private CinemachineImpulseSource impulseSource;
+
+
+    //摄像机的目标
+    private Transform cameraTarget;
+    private Vector3 cameraPos;
+
 
     // 普通攻击配置
     public Conf_SkillData[] StandAttackConfs;
@@ -51,6 +58,9 @@ public class Player_Controller : FSMControl<PlayerState>
         characterController = GetComponent<CharacterController>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
 
+        cameraTarget=transform.Find("CameraTarget");
+        cameraPos = cameraTarget.localPosition;
+
         // 默认是移动状态
         ChangeState<Player_Move>(PlayerState.Player_Move);
     }
@@ -78,5 +88,17 @@ public class Player_Controller : FSMControl<PlayerState>
     public void ScreenImpulse()
     {
         impulseSource.GenerateImpulse();
+    }
+
+    //基于攻击的相机移动
+    public void CameraMoveForAttack(Vector3 offset,float time,float backTime)
+    {
+        // 花time的时间去offset的位置
+        cameraTarget.DOLocalMove(cameraPos + offset, time).onComplete=()=>
+        {
+            //经过backTime的时间回归到原来的位置
+            cameraTarget.DOLocalMove(cameraPos, backTime);
+        };
+        
     }
 }

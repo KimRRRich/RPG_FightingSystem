@@ -125,6 +125,12 @@ public class Player_Model : MonoBehaviour
         canSwitch = true;
     }
 
+    private void CameraMoveForAttack(int index)
+    {
+        CameraModel model = skillData.CameraMoveModels[index];
+        player.CameraMoveForAttack(model.Target, model.Time, model.BackTime);
+    }
+
 
     #endregion
 

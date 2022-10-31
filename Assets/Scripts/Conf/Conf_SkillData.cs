@@ -3,86 +3,104 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName ="¼¼ÄÜÅäÖÃ",menuName ="ÅäÖÃ/¼¼ÄÜÅäÖÃ/¼¼ÄÜÊı¾İ")]
+[CreateAssetMenu(fileName = "æŠ€èƒ½é…ç½®", menuName = "é…ç½®/æŠ€èƒ½é…ç½®/æŠ€èƒ½æ•°æ®")]
 public class Conf_SkillData : ScriptableObject
 {
-    //¼¼ÄÜÃû³Æ
+    //æŠ€èƒ½åç§°
     public string Name;
 
-    //¼¼ÄÜ´¥·¢µÄ¶¯»­TriggerName
+    //æŠ€èƒ½è§¦å‘çš„åŠ¨ç”»TriggerName
     public string TriggerName;
 
-    //¼¼ÄÜ½áÊø´¥·¢µÄ¶¯»­TriggerName
+    //æŠ€èƒ½ç»“æŸè§¦å‘çš„åŠ¨ç”»TriggerName
     public string OverTriggerName;
 
-    //ÊÍ·ÅÊı¾İ
+    //ç›¸æœºä½ç§»çš„é›†åˆ
+    public CameraModel[] CameraMoveModels;
+    //é‡Šæ”¾æ•°æ®
     public Skill_ReleaseModel ReleaseModel;
 
-    //ÃüÖĞÊı¾İ
+    //å‘½ä¸­æ•°æ®
     public Skill_HitModel HitModel;
 
-    //½áÊøÊı¾İ
+    //ç»“æŸæ•°æ®
     public Skill_EndModel EndModel;
 }
 
 /// <summary>
-/// ¼¼ÄÜÊÍ·Å
+/// æŠ€èƒ½é‡Šæ”¾
 /// </summary>
 [Serializable]
 public class Skill_ReleaseModel
 {
-    //²¥·ÅÁ£×Ó/²úÉúÓÎÏ·ÎïÌå
+    //æ’­æ”¾ç²’å­/äº§ç”Ÿæ¸¸æˆç‰©ä½“
     public Skill_SpawnObj SpawnObj;
-    //²¥·ÅÒôĞ§
+    //æ’­æ”¾éŸ³æ•ˆ
     public AudioClip AudioClip;
-    //ÄÜ·ñĞı×ª
+    //èƒ½å¦æ—‹è½¬
     public bool CanRotate;
 }
 
 /// <summary>
-/// ¼¼ÄÜÃüÖĞ
+/// æŠ€èƒ½å‘½ä¸­
 /// </summary>
 [Serializable]
 public class Skill_HitModel
 {
-    //ÉËº¦ÊıÖµ
+    //ä¼¤å®³æ•°å€¼
     public int DamageValue;
-    //Ó²ÖÊÊ±¼ä
+    //ç¡¬è´¨æ—¶é—´
     public float HardTime;
-    //»÷·É»÷ÍË
+    //å‡»é£å‡»é€€
     public Vector3 RepelVelocity;
-    //»÷·É»÷ÍËµÄ¹ı¶ÈÊ±¼ä
+    //å‡»é£å‡»é€€çš„è¿‡åº¦æ—¶é—´
     public float RepelTransitionTime;
-    //ÊÇ·ñĞèÒªÆÁÄ»Õğ¶¯
+    //æ˜¯å¦éœ€è¦å±å¹•éœ‡åŠ¨
     public bool WantScreenImpulse;
-    //ÃüÖĞĞ§¹û
+    //æ˜¯å¦éœ€è¦å±å¹•è‰²å·®æ•ˆæœ
+    public bool WantChramaticAberration;
+    //å‘½ä¸­æ•ˆæœ
     public Conf_SkillHitEF SkillHitEF;
 
 }
 
 /// <summary>
-/// ¼¼ÄÜ½áÊø
+/// æŠ€èƒ½ç»“æŸ
 /// </summary>
 [Serializable]
 public class Skill_EndModel
 {
-    //²¥·ÅÁ£×Ó/²úÉúÓÎÏ·ÎïÌå
+    //æ’­æ”¾ç²’å­/äº§ç”Ÿæ¸¸æˆç‰©ä½“
     public Skill_SpawnObj SpawnObj;
 }
 
 /// <summary>
-/// ¼¼ÄÜ²úÉúÎïÌå£¬Á£×Ó
+/// æŠ€èƒ½äº§ç”Ÿç‰©ä½“ï¼Œç²’å­
 /// </summary>
 [Serializable]
 public class Skill_SpawnObj
 {
-    //Éú³ÉµÄÔ¤ÖÆÌå
+    //ç”Ÿæˆçš„é¢„åˆ¶ä½“
     public GameObject Prefab;
-    //Éú³ÉµÄÒôĞ§
+    //ç”Ÿæˆçš„éŸ³æ•ˆ
     public AudioClip AudioClip;
-    //Î»ÖÃ
+    //ä½ç½®
     public Vector3 Position;
-    //Ğı×ª
+    //æ—‹è½¬
     public Vector3 Rotation;
+
+}
+
+
+//ä¸€æ¬¡æ‘„åƒæœºä½ç§»çš„å…¨éƒ¨æ•°æ®
+[Serializable]
+public class CameraModel
+{
+    //ç›¸æœºè¦åç§»çš„ç¨‹åº¦
+    public Vector3 Target;
+    //å¤šä¹…åç§»ï¼Œå¹³ç§»æ—¶é—´
+    public float Time;
+    //å›å½’æ—¶é—´
+    public float BackTime;
 
 }
