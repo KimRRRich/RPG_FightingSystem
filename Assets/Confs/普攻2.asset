@@ -16,9 +16,12 @@ MonoBehaviour:
   TriggerName: "\u666E\u901A\u653B\u51FB"
   OverTriggerName: "\u653B\u51FB\u7ED3\u675F"
   CameraMoveModels:
-  - Target: {x: 0, y: -0.5, z: 0}
+  - Target: {x: 0, y: -0.3, z: 0}
     Time: 0.3
     BackTime: 0.2
+  CharacterMoveModels:
+  - Target: {x: 0, y: 0, z: 0.5}
+    Time: 0.5
   ReleaseModel:
     SpawnObj:
       Prefab: {fileID: 0}

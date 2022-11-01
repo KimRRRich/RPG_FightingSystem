@@ -90,21 +90,6 @@ public class Player_Model : MonoBehaviour
     }
 
 
-    //public void SkillOver(string skillName)
-    //{
-    //    if (skillName == skillData.Name)
-    //    { 
-    //        //基于结束配置生成粒子/游戏物体
-    //        SpawnObject(skillData.EndModel.SpawnObj);
-    //        canSwitch = true;
-    //        animator.SetTrigger(skillData.OverTriggerName);
-    //        player.CurrAttackIndex = 0;
-    //        //animator.SetTrigger(skillData.OverTriggerName);
-    //        player.ChangeState<Player_Move>(PlayerState.Player_Move);
-
-    //    }
-
-    //}
     private void SkillOver(string skillName)
     {
         if (skillName == skillData.Name)
@@ -125,13 +110,19 @@ public class Player_Model : MonoBehaviour
         canSwitch = true;
     }
 
+    //相机移动，基于第几个位移效果
     private void CameraMoveForAttack(int index)
     {
         CameraModel model = skillData.CameraMoveModels[index];
         player.CameraMoveForAttack(model.Target, model.Time, model.BackTime);
     }
 
-
+    //角色位移，基于第几个位移效果
+    private void CharacterMoveForAttack(int index)
+    {
+        CharacterMoveModel model = skillData.CharacterMoveModels[index];
+        player.CharacterAttackMove(model.Target, model.Time);
+    }
     #endregion
 
 }

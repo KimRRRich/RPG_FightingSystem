@@ -48,7 +48,7 @@ public class Player_Controller : FSMControl<PlayerState>
     }
 
 
-
+    
     private void Start()
     {
         input = new Player_Input();
@@ -100,5 +100,27 @@ public class Player_Controller : FSMControl<PlayerState>
             cameraTarget.DOLocalMove(cameraPos, backTime);
         };
         
+    }
+
+    /// <summary>
+    /// ½ÇÉ«¹¥»÷ÒÆ¶¯
+    /// </summary>
+    public void CharacterAttackMove(Vector3 target,float time)
+    {
+        StartCoroutine(DoCharacterAttackMove(transform.TransformDirection(target), time));
+    }
+
+    IEnumerator DoCharacterAttackMove(Vector3 target, float time)
+    {
+        float currTime = 0;
+        while (currTime<time)
+        {
+            Vector3 moveDir = target * Time.deltaTime / time;
+            characterController.Move(moveDir);
+            currTime += Time.deltaTime;
+
+        }
+        //ÔÝÍ£Ò»Ö¡
+        yield return null;
     }
 }

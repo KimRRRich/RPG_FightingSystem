@@ -15,8 +15,12 @@ public class Conf_SkillData : ScriptableObject
     //技能结束触发的动画TriggerName
     public string OverTriggerName;
 
-    //相机位移的集合
+    //相机位移的数据集合
     public CameraModel[] CameraMoveModels;
+
+    //角色位移的数据的集合
+    public CharacterMoveModel[] CharacterMoveModels;
+
     //释放数据
     public Skill_ReleaseModel ReleaseModel;
 
@@ -103,4 +107,15 @@ public class CameraModel
     //回归时间
     public float BackTime;
 
+}
+/// <summary>
+/// 一次角色位移的全部数据
+/// </summary>
+[Serializable]
+public class CharacterMoveModel
+{
+    //角色要偏移的程度
+    public Vector3 Target;
+    //多久偏移，平滑时间（速度）
+    public float Time;
 }
