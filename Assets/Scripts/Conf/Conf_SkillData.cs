@@ -25,7 +25,7 @@ public class Conf_SkillData : ScriptableObject
     public Skill_ReleaseModel ReleaseModel;
 
     //命中数据
-    public Skill_HitModel HitModel;
+    public Skill_HitModel[] HitModels;
 
     //结束数据
     public Skill_EndModel EndModel;

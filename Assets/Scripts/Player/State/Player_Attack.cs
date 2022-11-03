@@ -14,7 +14,7 @@ public class Player_Attack : StateBase<PlayerState>
     public override void OnEnter()
     {
         //攻击
-       player.StandAttack();
+       player.Attack();
     }
 
     public override void OnExit()  { }
@@ -23,7 +23,7 @@ public class Player_Attack : StateBase<PlayerState>
     {
 
         //检测下一次攻击
-        if(player.CheckAttack()) player.StandAttack();
+        if(player.CheckAttack()) player.Attack();
 
         //转向
         if (player.CurrSkillData.ReleaseModel.CanRotate)

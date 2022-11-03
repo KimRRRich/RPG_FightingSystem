@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Cinemachine;
 using DG.Tweening;
 
@@ -33,6 +34,10 @@ public class Player_Controller : FSMControl<PlayerState>
 
     // 普通攻击配置
     public Conf_SkillData[] StandAttackConfs;
+
+    //技能的包装数据cd、按键
+    public SkillModel[] SkillModels;
+
     // 当前的技能
     public Conf_SkillData CurrSkillData { get; private set; }
     // 当前是第几段攻击
@@ -68,16 +73,50 @@ public class Player_Controller : FSMControl<PlayerState>
     // 检查攻击状态
     public bool CheckAttack()
     {
-        return input.GetAttackKeyDown() && model.canSwitch;
+        //普攻检测
+        if(input.GetAttackKeyDown() && model.canSwitch)
+        {
+            CurrSkillData = StandAttackConfs[CurrAttackIndex];
+            AttackAction = StandAttack;
+            return true;
+        }
+        //技能检测
+        for(int i = 0; i < SkillModels.Length; i++)
+        {
+            if (input.GetKeyDown(SkillModels[i].KeyCode) && model.canSwitch)
+            {
+                AttackAction = SkillAttack;
+                return true;
+            }
+        }
+        return false;
+
     }
 
-    public void StandAttack()
+    //攻击事件，普攻或者技能
+    private UnityAction AttackAction;
+
+    //攻击
+    public void Attack()
     {
-        model.StartAttack(StandAttackConfs[CurrAttackIndex]);
-        CurrSkillData = StandAttackConfs[CurrAttackIndex];
+        AttackAction?.Invoke();//不是null就执行
+    }
+
+    //普通攻击
+    private void StandAttack()
+    {
+        model.StartAttack(CurrSkillData);
         CurrAttackIndex++;
 
     }
+
+    //技能攻击
+    private void SkillAttack()
+    {
+        CurrAttackIndex = 0;
+        model.StartAttack(CurrSkillData);
+    }
+
 
     public void PlayAudio(AudioClip audioClip)
     {

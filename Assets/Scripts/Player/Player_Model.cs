@@ -7,7 +7,7 @@ public class Player_Model : MonoBehaviour
 {
     private Player_Controller player;
     private Animator animator;
-    public WeaponCollider WeaponConllider;
+    public WeaponCollider[] WeaponConllider;
 
 
     //当前技能数据
@@ -20,7 +20,11 @@ public class Player_Model : MonoBehaviour
     {
         this.player = player;
         animator = GetComponent<Animator>();
-        WeaponConllider.Init(this);
+        for(int i = 0; i < WeaponConllider.Length; i++)
+        {
+            WeaponConllider[i].Init(this);
+        }
+        
     }
 
     public void PlayAudio(AudioClip audioClip)
@@ -39,6 +43,7 @@ public class Player_Model : MonoBehaviour
 
     public void StartAttack(Conf_SkillData conf)
     {
+        currHitIndex = 0;
         skillData = conf;
         canSwitch = false;
         animator.SetTrigger(skillData.TriggerName);
@@ -65,13 +70,14 @@ public class Player_Model : MonoBehaviour
 
     #region 动画事件
 
+    private int currHitIndex = 0;
     //开启技能伤害
-    public void StartSkillHit()
+    public void StartSkillHit(int weaponIndex)
     {
         //开启刀光的拖尾
         //开启伤害检测的触发器
-        WeaponConllider.StartSkillHit(skillData.HitModel);
-
+        WeaponConllider[weaponIndex].StartSkillHit(skillData.HitModels[currHitIndex]);
+        currHitIndex++;
         //生成释放时的游戏物体/粒子
         SpawnObject(skillData.ReleaseModel.SpawnObj);
 
@@ -82,16 +88,17 @@ public class Player_Model : MonoBehaviour
     }
 
     //停止技能伤害
-    public void StopSkillHit()
+    public void StopSkillHit(int weaponIndex)
     {
         //关闭刀光的拖尾
         //关闭伤害检测的触发器
-        WeaponConllider.StopSkillHit();
+        WeaponConllider[weaponIndex].StopSkillHit();
     }
 
 
     private void SkillOver(string skillName)
     {
+        Debug.Log("SkillOver?");
         if (skillName == skillData.Name)
         {
             // 基于结束配置生成粒子/游戏物体
@@ -100,7 +107,7 @@ public class Player_Model : MonoBehaviour
             animator.SetTrigger(skillData.OverTriggerName);
             player.CurrAttackIndex = 0;
             player.ChangeState<Player_Move>(PlayerState.Player_Move);
-            Debug.Log("SkillOver");
+            Debug.Log("SkillOver!");
         }
     }
 
