@@ -85,6 +85,7 @@ public class Player_Controller : FSMControl<PlayerState>
         {
             if (input.GetKeyDown(SkillModels[i].KeyCode) && model.canSwitch)
             {
+                CurrSkillData = SkillModels[i].SkillData;
                 AttackAction = SkillAttack;
                 return true;
             }

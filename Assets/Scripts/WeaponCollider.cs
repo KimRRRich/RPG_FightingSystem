@@ -60,6 +60,8 @@ public class WeaponCollider : MonoBehaviour
                 if (hitModel.SkillHitEF.AudioClip != null) model.PlayAudio(hitModel.SkillHitEF.AudioClip);
                 
             }
+            
+
             //命中 效果相关的逻辑
             if (hitModel.WantScreenImpulse) model.ScreenImpulse();
             if (hitModel.WantChramaticAberration) PostProcessManager.Instance.ChromaticAberrationEF();

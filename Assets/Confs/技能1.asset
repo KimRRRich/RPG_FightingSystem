@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b520d4a45be18324183d76961b2afdd3, type: 3}
+  m_Name: "\u6280\u80FD1"
+  m_EditorClassIdentifier: 
+  Name: "\u6280\u80FD1"
+  TriggerName: "\u6280\u80FD1"
+  OverTriggerName: "\u6280\u80FD\u7ED3\u675F"
+  CameraMoveModels: []
+  CharacterMoveModels:
+  - Target: {x: 0, y: 0, z: 1.2}
+    Time: 1.05
+  - Target: {x: 0, y: 0, z: 1}
+    Time: 1
+  SpawnObjs: []
+  ReleaseModel:
+    SpawnObj:
+      Prefab: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Position: {x: 0, y: 2, z: 0}
+      Rotation: {x: 0, y: 90, z: 0}
+    AudioClip: {fileID: 0}
+    CanRotate: 1
+  HitModels:
+  - DamageValue: 10
+    HardTime: 1
+    RepelVelocity: {x: 0, y: 0.5, z: 0.8}
+    RepelTransitionTime: 0.2
+    WantScreenImpulse: 1
+    WantChramaticAberration: 1
+    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
+    SpawnObj:
+      Prefab: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+  - DamageValue: 10
+    HardTime: 1
+    RepelVelocity: {x: 0, y: 0, z: 0.5}
+    RepelTransitionTime: 0.2
+    WantScreenImpulse: 1
+    WantChramaticAberration: 1
+    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
+    SpawnObj:
+      Prefab: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+  - DamageValue: 10
+    HardTime: 1
+    RepelVelocity: {x: 0, y: 0, z: 1.5}
+    RepelTransitionTime: 0.2
+    WantScreenImpulse: 1
+    WantChramaticAberration: 1
+    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
+    SpawnObj:
+      Prefab: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+  EndModel:
+    SpawnObj:
+      Prefab: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}

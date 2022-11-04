@@ -47,10 +47,15 @@ public class Player_Model : MonoBehaviour
         skillData = conf;
         canSwitch = false;
         animator.SetTrigger(skillData.TriggerName);
+
+        //生成单次释放时的游戏物体/粒子
+        SpawnObject(skillData.ReleaseModel.SpawnObj);
+        //音效
+        PlayAudio(skillData.ReleaseModel.AudioClip);
     }
 
     //产生物体 基于命中
-    private void SpawnObject(Skill_SpawnObj spawn)
+    public void SpawnObject(Skill_SpawnObj spawn)
     {
         if (spawn != null && spawn.Prefab != null)
         {
@@ -77,13 +82,14 @@ public class Player_Model : MonoBehaviour
         //开启刀光的拖尾
         //开启伤害检测的触发器
         WeaponConllider[weaponIndex].StartSkillHit(skillData.HitModels[currHitIndex]);
-        currHitIndex++;
-        //生成释放时的游戏物体/粒子
-        SpawnObject(skillData.ReleaseModel.SpawnObj);
+        
+
+        //生成单次攻击释放时的游戏物体/粒子
+        SpawnObject(skillData.HitModels[currHitIndex].SpawnObj);
 
         //音效
-        PlayAudio(skillData.ReleaseModel.AudioClip);
-
+        PlayAudio(skillData.HitModels[currHitIndex].AudioClip);
+        currHitIndex++;
 
     }
 
@@ -129,6 +135,13 @@ public class Player_Model : MonoBehaviour
     {
         CharacterMoveModel model = skillData.CharacterMoveModels[index];
         player.CharacterAttackMove(model.Target, model.Time);
+    }
+
+
+    //生成游戏物体
+    private void SpawnSkillObj(int index)
+    {
+        SpawnObject(skillData.SpawnObjs[index]);
     }
     #endregion
 

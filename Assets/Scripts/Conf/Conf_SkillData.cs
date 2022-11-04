@@ -21,6 +21,10 @@ public class Conf_SkillData : ScriptableObject
     //角色位移的数据的集合
     public CharacterMoveModel[] CharacterMoveModels;
 
+    //技能过程中任意时间生成物体
+    //播放粒子、产生游戏物体
+    public Skill_SpawnObj[] SpawnObjs;
+
     //释放数据
     public Skill_ReleaseModel ReleaseModel;
 
@@ -29,6 +33,8 @@ public class Conf_SkillData : ScriptableObject
 
     //结束数据
     public Skill_EndModel EndModel;
+
+    
 }
 
 /// <summary>
@@ -65,6 +71,10 @@ public class Skill_HitModel
     public bool WantChramaticAberration;
     //命中效果
     public Conf_SkillHitEF SkillHitEF;
+    //播放粒子/产生游戏物体
+    public Skill_SpawnObj SpawnObj;
+    //播放音效
+    public AudioClip AudioClip;
 
 }
 
