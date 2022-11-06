@@ -395,7 +395,8 @@
 "Assets/Scripts/Player/State/Player_Attack.cs"
 "Assets/Scripts/Player/State/Player_Move.cs"
 "Assets/Scripts/PostProcessManager.cs"
-"Assets/Scripts/Skill2_Controller.cs"
+"Assets/Scripts/Skill/Skill2_Controller.cs"
+"Assets/Scripts/Skill/Skill3_Controller.cs"
 "Assets/Scripts/WeaponCollider.cs"
 -langversion:9.0
 

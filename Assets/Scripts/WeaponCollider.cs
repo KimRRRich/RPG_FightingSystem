@@ -65,6 +65,9 @@ public class WeaponCollider : MonoBehaviour
             //命中 效果相关的逻辑
             if (hitModel.WantScreenImpulse) model.ScreenImpulse();
             if (hitModel.WantChramaticAberration) PostProcessManager.Instance.ChromaticAberrationEF();
+
+            //生成单次释放时的游戏物体/粒子
+            model.SpawnObject(hitModel.SpawnObj);
         }
     }
 

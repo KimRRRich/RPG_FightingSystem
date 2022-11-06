@@ -598,7 +598,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.059678968, y: 0.0000000042939283, z: -2.567148e-10, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678968, y: 9.864412e-10, z: -5.897489e-11, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.9649999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -842,7 +842,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693295099}
-  m_LocalRotation: {x: 0.059678968, y: 0.0000000042939283, z: -2.567148e-10, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678968, y: 9.864412e-10, z: -5.897489e-11, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.9649999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -946,16 +946,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6659153952884678048, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
       propertyPath: SkillModels.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6659153952884678048, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
       propertyPath: SkillModels.Array.data[1].KeyCode
       value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 6659153952884678048, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
+      propertyPath: SkillModels.Array.data[2].KeyCode
+      value: 117
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659153952884678048, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
       propertyPath: SkillModels.Array.data[1].SkillData
       value: 
       objectReference: {fileID: 11400000, guid: 677dde0a3ef7db5409b3e941bb29d90b, type: 2}
+    - target: {fileID: 6659153952884678048, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
+      propertyPath: SkillModels.Array.data[2].SkillData
+      value: 
+      objectReference: {fileID: 11400000, guid: b4873e88d26ec2e4a81ab090786f8f1f, type: 2}
     - target: {fileID: 6659153952884678051, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
       propertyPath: m_Name
       value: Player

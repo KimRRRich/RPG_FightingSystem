@@ -102,6 +102,8 @@ public class Skill_SpawnObj
     public Vector3 Position;
     //旋转
     public Vector3 Rotation;
+    //延迟时间
+    public float Time;
 
 }
 

@@ -48,8 +48,9 @@ public class Player_Model : MonoBehaviour
         canSwitch = false;
         animator.SetTrigger(skillData.TriggerName);
 
-        //生成单次释放时的游戏物体/粒子
+        //生成单次的粒子
         SpawnObject(skillData.ReleaseModel.SpawnObj);
+
         //音效
         PlayAudio(skillData.ReleaseModel.AudioClip);
     }
@@ -59,12 +60,21 @@ public class Player_Model : MonoBehaviour
     {
         if (spawn != null && spawn.Prefab != null)
         {
-            GameObject temp = GameObject.Instantiate(spawn.Prefab, null);
-            temp.transform.position =transform.position + spawn.Position;
-            //temp.transform.LookAt(Camera.main.transform);  //可要可不要
-            temp.transform.eulerAngles =player.transform.eulerAngles+spawn.Rotation;
-            PlayAudio(spawn.AudioClip);
+            StartCoroutine(DoSpawnObject(spawn));
         }
+    }
+
+    private IEnumerator DoSpawnObject(Skill_SpawnObj spawn)
+    {
+        yield return new WaitForSeconds(spawn.Time);
+        GameObject temp = GameObject.Instantiate(spawn.Prefab, null);
+        //相对玩家的当前坐标朝向来偏移
+        temp.transform.position = transform.position;
+        temp.transform.eulerAngles = player.transform.eulerAngles;
+
+        temp.transform.Translate(spawn.Position, Space.Self);
+        temp.transform.eulerAngles += spawn.Rotation;
+        PlayAudio(spawn.AudioClip);
     }
 
     public void ScreenImpulse()
@@ -85,7 +95,7 @@ public class Player_Model : MonoBehaviour
         
 
         //生成单次攻击释放时的游戏物体/粒子
-        SpawnObject(skillData.HitModels[currHitIndex].SpawnObj);
+        //SpawnObject(skillData.HitModels[currHitIndex].SpawnObj);
 
         //音效
         PlayAudio(skillData.HitModels[currHitIndex].AudioClip);
