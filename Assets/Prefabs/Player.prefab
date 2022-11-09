@@ -386,16 +386,16 @@ MonoBehaviour:
   SkillModels:
   - SkillData: {fileID: 11400000, guid: dd77c358d3cb4e442aced2cf37fa5f5e, type: 2}
     KeyCode: 107
-    CDTime: 0
-    CurrTime: 0
+    CDTime: 10
+    CDimage: {fileID: 0}
   - SkillData: {fileID: 11400000, guid: 677dde0a3ef7db5409b3e941bb29d90b, type: 2}
     KeyCode: 108
-    CDTime: 0
-    CurrTime: 0
+    CDTime: 15
+    CDimage: {fileID: 0}
   - SkillData: {fileID: 11400000, guid: b4873e88d26ec2e4a81ab090786f8f1f, type: 2}
     KeyCode: 117
-    CDTime: 0
-    CurrTime: 0
+    CDTime: 20
+    CDimage: {fileID: 0}
 --- !u!143 &6659153952884678063
 CharacterController:
   m_ObjectHideFlags: 0
