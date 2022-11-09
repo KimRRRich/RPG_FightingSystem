@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -10,5 +11,6 @@ public class SkillModel
     public KeyCode KeyCode;
     public float CDTime;
     public float CurrTime;
+    public Image CDimage;
 
 }

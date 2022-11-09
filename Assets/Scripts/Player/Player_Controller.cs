@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Cinemachine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public enum PlayerState
 {
@@ -32,6 +33,25 @@ public class Player_Controller : FSMControl<PlayerState>
     private Vector3 cameraPos;
 
 
+    
+
+    //UI
+    public Image HPBarImg;
+
+    private int hp = 100;
+    public int Hp { get => hp; 
+        set {
+            hp = value;
+            if (hp < 0)
+            {
+                //TODO:ËÀÍö
+                hp = 0;
+            }
+            //¸üÐÂUI
+            HPBarImg.fillAmount = hp / 100f;
+        }
+    }
+
     // ÆÕÍ¨¹¥»÷ÅäÖÃ
     public Conf_SkillData[] StandAttackConfs;
 
@@ -53,7 +73,10 @@ public class Player_Controller : FSMControl<PlayerState>
     }
 
 
-    
+
+
+
+
     private void Start()
     {
         input = new Player_Input();
@@ -68,6 +91,15 @@ public class Player_Controller : FSMControl<PlayerState>
 
         // Ä¬ÈÏÊÇÒÆ¶¯×´Ì¬
         ChangeState<Player_Move>(PlayerState.Player_Move);
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        if (input.GetKeyDown(KeyCode.Space))
+        {
+            Hp -= UnityEngine.Random.Range(1, 20);
+        }
     }
 
     // ¼ì²é¹¥»÷×´Ì¬

@@ -84,6 +84,7 @@
     <Compile Include="Assets\Art\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\Scripts\Monster\Monster_Model.cs" />
+    <Compile Include="Assets\Scripts\Skill\Skill3_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Model.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Example\Scripts\SwooshTest.cs" />
     <Compile Include="Assets\Scripts\PostProcessManager.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Assets\Scripts\Player\Player_Audio.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
-    <Compile Include="Assets\Scripts\Skill\Skill3_Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\场景\Casual Tiny Environment - Jungle Set\Readme.txt" />
