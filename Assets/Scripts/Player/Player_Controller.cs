@@ -16,12 +16,10 @@ public enum PlayerState
     // 攻击
     Player_Attack
 }
-public class Player_Controller : FSMControl<PlayerState>
+public class Player_Controller : Character_Controller<PlayerState>
 {
     public Player_Input input { get; private set; }
-    public new Player_Audio audio { get; private set; }
-    public Player_Model model { get; private set; }
-    public CharacterController characterController { get; private set; }
+    //public Player_Model model { get; protected set; }
 
 
     //屏幕振动源
@@ -32,14 +30,11 @@ public class Player_Controller : FSMControl<PlayerState>
     private Transform cameraTarget;
     private Vector3 cameraPos;
 
-
-    
-
     //UI
     public Image HPBarImg;
 
-    private int hp = 100;
-    public int Hp { get => hp; 
+  
+    public override int Hp { get => hp; 
         set {
             hp = value;
             if (hp < 0)
@@ -55,23 +50,13 @@ public class Player_Controller : FSMControl<PlayerState>
     // 普通攻击配置
     public Conf_SkillData[] StandAttackConfs;
 
-    //技能的包装数据cd、按键
-    public SkillModel[] SkillModels;
-
-    
-
-
-
-
-
-
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        //model = transform.Find("Model").GetComponent<Player_Model>();
+        //model.Init(this);
         input = new Player_Input();
-        audio = new Player_Audio(GetComponent<AudioSource>());
-        model = transform.Find("Model").GetComponent<Player_Model>();
-        model.Init(this);
-        characterController = GetComponent<CharacterController>();
+
         impulseSource = GetComponent<CinemachineImpulseSource>();
 
         cameraTarget=transform.Find("CameraTarget");
@@ -81,28 +66,11 @@ public class Player_Controller : FSMControl<PlayerState>
         ChangeState<Player_Move>(PlayerState.Player_Move);
     }
 
-    protected override void Update()
-    {
-        base.Update();
-        UpdateSkillCD();
-        if (input.GetKeyDown(KeyCode.Space))
-        {
-            Hp -= UnityEngine.Random.Range(1, 20);
-        }
-    }
-
-    //更新技能CD
-    private void UpdateSkillCD()
-    {
-        for(int i = 0; i < SkillModels.Length; i++)
-        {
-            SkillModels[i].Update();
-        }
-    }
+   
 
     #region  战斗相关
     // 当前的技能
-    public Conf_SkillData CurrSkillData { get; private set; }
+    
     // 当前是第几段攻击(普攻)
     private int currAttackIndex = 0;
     public int CurrAttackIndex
@@ -115,8 +83,7 @@ public class Player_Controller : FSMControl<PlayerState>
         }
     }
 
-    //当前的技能编号
-    private int currSkillIndex = -1;
+   
     // 检查攻击状态
     public bool CheckAttack()
     {
@@ -172,10 +139,7 @@ public class Player_Controller : FSMControl<PlayerState>
     }
 
 
-    public void PlayAudio(AudioClip audioClip)
-    {
-        audio.PlayAudio(audioClip);
-    }
+    
 
     //屏幕震动
     public void ScreenImpulse()
@@ -195,27 +159,7 @@ public class Player_Controller : FSMControl<PlayerState>
 
     }
 
-    /// <summary>
-    /// 角色攻击移动
-    /// </summary>
-    public void CharacterAttackMove(Vector3 target, float time)
-    {
-        StartCoroutine(DoCharacterAttackMove(transform.TransformDirection(target), time));
-    }
-
-    IEnumerator DoCharacterAttackMove(Vector3 target, float time)
-    {
-        float currTime = 0;
-        while (currTime < time)
-        {
-            Vector3 moveDir = target * Time.deltaTime / time;
-            characterController.Move(moveDir);
-            currTime += Time.deltaTime;
-
-        }
-        //暂停一帧
-        yield return null;
-    }
+    
     #endregion
 
 
