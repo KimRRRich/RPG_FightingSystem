@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Move : StateBase<PlayerState>
+public class Player_Move : Player_StateBase
 {
-    public Player_Controller player;
+    //public Player_Controller player;
 
     private float runTransition = 0;
     private float moveSpeed = 400f;
@@ -24,11 +24,11 @@ public class Player_Move : StateBase<PlayerState>
     }
 
 
-    public override void Init(FSMControl<PlayerState> controller, PlayerState stateType)
-    {
-        base.Init(controller, stateType);
-        player = controller as Player_Controller;
-    }
+    //public override void Init(FSMControl<PlayerState> controller, PlayerState stateType)
+    //{
+    //    base.Init(controller, stateType);
+    //    player = controller as Player_Controller;
+    //}
 
    
 
@@ -67,7 +67,7 @@ public class Player_Move : StateBase<PlayerState>
         player.transform.Rotate(rot * Time.deltaTime * rotateSpeed);
 
         //同步模型动画
-        player.model.UpdateMovePar(h,v);
+        model.UpdateMovePar(h,v);
     }
 
     public override void OnEnter()

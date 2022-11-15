@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_Controller : MonoBehaviour
+public enum MonsterState
 {
-    private Monster_Model model;
-    private CharacterController characterController;
-    private int hp = 100;
+
+}
+public class Monster_Controller : Character_Controller<MonsterState>
+{
+    //private Monster_Model model;
+    //private CharacterController characterController;
+    //private int hp = 100;
 
     //是否击飞
     private bool isRepel;
@@ -17,14 +21,26 @@ public class Monster_Controller : MonoBehaviour
     //现在时间
     private float currentRepelTime;
 
-    public void Start()
+    public override int Hp { get => hp; set => hp = value; }
+
+    protected override void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
     {
-        model = transform.Find("Model").GetComponent<Monster_Model>();
-        characterController = transform.GetComponent<CharacterController>();
-        model.Init();
+        base.OnHurt(sourceTransform, repelVelocity, repelTransitionTime);
+        //击退击飞
+        isRepel = true;
+        this.repelVelocity = sourceTransform.TransformDirection(repelVelocity);
+        repelTime = repelTransitionTime;
+        currentRepelTime = 0.0f;
     }
 
-    private void Update()
+    //public void Start()
+    //{
+    //    model = transform.Find("Model").GetComponent<Monster_Model>();
+    //    characterController = transform.GetComponent<CharacterController>();
+    //    model.Init();
+    //}
+
+    protected override void Update()
     {
         if (isRepel)
         {
@@ -39,28 +55,9 @@ public class Monster_Controller : MonoBehaviour
         }
     }
 
-    public void Hurt(float hardTime,Transform sourceTransform,Vector3 repelVelocity,float repelTransitionTime,int damageValue)
-    {
+    #region 战斗逻辑
+    
+    #endregion
 
-        //硬质与播放动画
-        model.PlayHurtAnimation();
-        //取消之前可能还在执行中的硬直
-        CancelInvoke("HurtOver");
-        Invoke("HurtOver", hardTime);
-
-        //击退击飞
-        isRepel = true;
-        this.repelVelocity = sourceTransform.TransformDirection(repelVelocity);
-        repelTime = repelTransitionTime;
-        currentRepelTime = 0.0f;
-
-        //生命值减少
-        hp -= damageValue;
-    }
-
-    public void HurtOver()
-    {
-        model.StopHurtAnimation();
-    }
 }
     

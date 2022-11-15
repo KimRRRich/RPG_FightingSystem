@@ -17,11 +17,13 @@ public abstract class StateBase <T>
     //public FSMControl controller;
 
     //第一次实例化的时候初始化
-    public virtual void Init(FSMControl<T> controller,T stateType)
+    public  void Init(FSMControl<T> controller,T stateType)
     {
         //this.controller = controller;
         this.StateType = stateType;
+        OnInit(controller, stateType);
     }
+    protected virtual void OnInit(FSMControl<T> controller, T stateType) { }
 
     //进入
     public abstract void OnEnter();

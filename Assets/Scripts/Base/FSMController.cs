@@ -5,7 +5,7 @@ using System;
 
 
 //有限状态机控制器
-//玩家，怪物等
+//玩家，敌人等
 public abstract class FSMControl<T> : MonoBehaviour
 {
     //当前的状态

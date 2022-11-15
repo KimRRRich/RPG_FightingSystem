@@ -6,7 +6,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
 {
     public new AudioController audio { get; protected set; }
 
-    public Player_Model model { get; protected set; }
+    public Character_Model<T> model { get; protected set; }
 
     public CharacterController characterController { get; protected set; }
 
@@ -21,10 +21,9 @@ public abstract class Character_Controller<T> : FSMControl<T>
     {
        
         audio = new AudioController(GetComponent<AudioSource>());
-
-        model = transform.Find("Model").GetComponent<Player_Model>();
+        model = transform.Find("Model").GetComponent<Character_Model<T>>();
         //TODO:模型层重构
-        //model.Init(this);
+        model.Init(this);
         characterController = GetComponent<CharacterController>();
     }
     protected override void Update()
@@ -74,6 +73,36 @@ public abstract class Character_Controller<T> : FSMControl<T>
         }
         //暂停一帧
         yield return null;
+    }
+
+    public void Hurt(float hardTime, Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime, int damageValue)
+    {
+        //硬直与播放动画
+        model.PlayHurtAnimation();
+        //取消之前可能还在执行中的硬直
+        CancelInvoke("HurtOver");
+        Invoke("HurtOver", hardTime);
+
+        //击退击飞
+        //isRepel = true;
+        //this.repelVelocity = sourceTransform.TransformDirection(repelVelocity);
+        //repelTime = repelTransitionTime;
+        //currentRepelTime = 0.0f;
+
+        OnHurt(sourceTransform, repelVelocity, repelTransitionTime);
+
+        //生命值减少
+        hp -= damageValue;
+    }
+
+    protected virtual void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
+    {
+
+    }
+
+    public void HurtOver()
+    {
+        model.StopHurtAnimation();
     }
 
     #endregion

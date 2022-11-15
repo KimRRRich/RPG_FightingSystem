@@ -8,21 +8,21 @@ public class WeaponCollider : MonoBehaviour
     //public TrailRenderer TrailRenderer;
     public MeleeWeaponTrail MeleeWeaponTrail;
 
-    private List<GameObject> monsterList;
+    private List<GameObject> enemyList;
 
-    private Player_Model model;
+    private Character_Model model;
 
     //当前技能的命中数据
     private Skill_HitModel hitModel;
 
-    public void Init(Player_Model model)
+    public void Init(Character_Model model)
     {
         //BoxCollider.enabled = false;
         //TrailRenderer.emitting = false;
         //monsterList = new List<GameObject>();
         //this.model= model ;
         //StopSkillHit();
-        monsterList = new List<GameObject>();
+        enemyList = new List<GameObject>();
         this.model = model;
         StopSkillHit();
     }
@@ -37,16 +37,16 @@ public class WeaponCollider : MonoBehaviour
     {
         BoxCollider.enabled = false;
         MeleeWeaponTrail.Emit = false;
-        monsterList.Clear();
+        enemyList.Clear();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //保证一段伤害对一个怪物只造成一段伤害
-        if (other.tag == "Monster" && !monsterList.Contains(other.gameObject))
+        //保证一段伤害对一个敌人只造成一段伤害
+        if (model.EnemyTargetNames.Contains(other.tag) && !enemyList.Contains(other.gameObject))
         {
-            //怪物逻辑
-            monsterList.Add(other.gameObject);
+            //敌人逻辑
+            enemyList.Add(other.gameObject);
             //实际输出伤害给敌人
             other.GetComponent<Monster_Controller>().Hurt(hitModel.HardTime,model.transform,hitModel.RepelVelocity,hitModel.RepelTransitionTime,hitModel.DamageValue);
             
@@ -60,14 +60,18 @@ public class WeaponCollider : MonoBehaviour
                 if (hitModel.SkillHitEF.AudioClip != null) model.PlayAudio(hitModel.SkillHitEF.AudioClip);
                 
             }
+            //如果是玩家持有
+            if(model as Player_Model)
+            {
+                Player_Model player_Model = model as Player_Model;
+                //命中 效果相关的逻辑
+                if (hitModel.WantScreenImpulse) player_Model.ScreenImpulse();
+                if (hitModel.WantChramaticAberration) PostProcessManager.Instance.ChromaticAberrationEF();
+
+                //生成单次释放时的游戏物体/粒子
+                model.SpawnObject(hitModel.SpawnObj);
+            }
             
-
-            //命中 效果相关的逻辑
-            if (hitModel.WantScreenImpulse) model.ScreenImpulse();
-            if (hitModel.WantChramaticAberration) PostProcessManager.Instance.ChromaticAberrationEF();
-
-            //生成单次释放时的游戏物体/粒子
-            model.SpawnObject(hitModel.SpawnObj);
         }
     }
 

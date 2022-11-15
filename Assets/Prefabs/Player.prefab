@@ -378,11 +378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
-  HPBarImg: {fileID: 0}
-  StandAttackConfs:
-  - {fileID: 11400000, guid: 418ae3d506f18f244805ae38ead8f3d5, type: 2}
-  - {fileID: 11400000, guid: 2074e891917c79246a678388f2e29495, type: 2}
-  - {fileID: 11400000, guid: 09831409e7c52b14592a9bd56af48ec1, type: 2}
   SkillModels:
   - SkillData: {fileID: 11400000, guid: dd77c358d3cb4e442aced2cf37fa5f5e, type: 2}
     KeyCode: 107
@@ -396,6 +391,11 @@ MonoBehaviour:
     KeyCode: 117
     CDTime: 20
     CDimage: {fileID: 0}
+  HPBarImg: {fileID: 0}
+  StandAttackConfs:
+  - {fileID: 11400000, guid: 418ae3d506f18f244805ae38ead8f3d5, type: 2}
+  - {fileID: 11400000, guid: 2074e891917c79246a678388f2e29495, type: 2}
+  - {fileID: 11400000, guid: 09831409e7c52b14592a9bd56af48ec1, type: 2}
 --- !u!143 &6659153952884678063
 CharacterController:
   m_ObjectHideFlags: 0
