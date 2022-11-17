@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Monster_Model : Character_Model<MonsterState>
 {
-    //private Animator animator;
+    private Monster_Controller monster;
 
-    //public void Init()
-    // {
-    //     animator = GetComponent<Animator>();
-    // }
-
-   
-
-
+    public override void Init(Character_Controller<MonsterState> character)
+    {
+        base.Init(character);
+        monster = character as Monster_Controller;
+    }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Skill\Skill2_Controller.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_Move.cs" />
+    <Compile Include="Assets\Scripts\Monster\State\Monster_StateBase.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Scripts\Interpolate.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
@@ -72,15 +73,19 @@
     <Compile Include="Assets\Scripts\Conf\SkillModel.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_Wall.cs" />
     <Compile Include="Assets\Scripts\Base\Character_Controller.cs" />
+    <Compile Include="Assets\Scripts\Monster\State\Monster_Dead.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\CFX_AutoDestructShuriken.cs" />
+    <Compile Include="Assets\Scripts\Monster\State\Monster_Idle.cs" />
     <Compile Include="Assets\Scripts\WeaponCollider.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_Attack.cs" />
     <Compile Include="Assets\Scripts\Conf\Conf_SkillHitEF.cs" />
+    <Compile Include="Assets\Scripts\Monster\State\Monster_Hurt.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Example\Scripts\MouseMove.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_DeleteAfterDelay.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Scripts\Conf\Conf_SkillData.cs" />
+    <Compile Include="Assets\Scripts\Monster\State\Monster_Attack.cs" />
     <Compile Include="Assets\Scripts\Monster\Monster_Controller.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
@@ -89,13 +94,13 @@
     <Compile Include="Assets\Scripts\Player\Player_Model.cs" />
     <Compile Include="Assets\Scripts\Base\Character_Model.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Example\Scripts\SwooshTest.cs" />
+    <Compile Include="Assets\Scripts\Monster\State\Monster_Move.cs" />
     <Compile Include="Assets\Scripts\PostProcessManager.cs" />
     <Compile Include="Assets\Scripts\Base\FSMController.cs" />
     <Compile Include="Assets\Scripts\Base\AudioController.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_Translate.cs" />
-    <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_StateBase.cs" />
-    <Compile Include="Assets\Scripts\Monster\State\Monster_StateBase.cs" />
+    <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\场景\Casual Tiny Environment - Jungle Set\Readme.txt" />

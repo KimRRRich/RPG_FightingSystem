@@ -4,6 +4,12 @@ using UnityEngine;
 
 public enum MonsterState
 {
+    Monster_None,
+    Monster_Idle,
+    Monster_Move,
+    Monster_Attack,
+    Monster_Hurt,
+    Monster_Dead,
 
 }
 public class Monster_Controller : Character_Controller<MonsterState>
@@ -22,6 +28,13 @@ public class Monster_Controller : Character_Controller<MonsterState>
     private float currentRepelTime;
 
     public override int Hp { get => hp; set => hp = value; }
+
+    protected override void Start()
+    {
+        base.Start();
+        ChangeState<Monster_Idle>(MonsterState.Monster_Idle);
+
+    }
 
     protected override void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
     {
