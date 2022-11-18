@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Monster_Model : Character_Model<MonsterState>
 {
-    private Monster_Controller monster;
+    private Monster_Controller monster; 
 
     public override void Init(Character_Controller<MonsterState> character)
     {

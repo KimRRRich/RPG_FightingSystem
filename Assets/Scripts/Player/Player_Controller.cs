@@ -18,6 +18,7 @@ public enum PlayerState
 }
 public class Player_Controller : Character_Controller<PlayerState>
 {
+    public static Player_Controller Instance;
     public Player_Input input { get; private set; }
     //public Player_Model model { get; protected set; }
 
@@ -49,6 +50,11 @@ public class Player_Controller : Character_Controller<PlayerState>
 
     // ∆’Õ®π•ª˜≈‰÷√
     public Conf_SkillData[] StandAttackConfs;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     protected override void Start()
     {

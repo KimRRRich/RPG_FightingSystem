@@ -30,6 +30,7 @@ public abstract class FSMControl<T> : MonoBehaviour
         //如果当前状态存在，应该执行其退出
         if (CurrStateObj != null) CurrStateObj.OnExit();
 
+        CurrentState = newState;
         //基于新的状态 获得一个 新的状态对象
         //StateBase tempStateObj = GetStateObj(newState);
         CurrStateObj=GetStateObj<K>(newState);

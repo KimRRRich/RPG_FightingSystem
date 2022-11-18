@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum MonsterState
 {
@@ -17,6 +18,7 @@ public class Monster_Controller : Character_Controller<MonsterState>
     //private Monster_Model model;
     //private CharacterController characterController;
     //private int hp = 100;
+    private NavMeshAgent navMeshAgent;
 
     //是否击飞
     private bool isRepel;
@@ -32,6 +34,8 @@ public class Monster_Controller : Character_Controller<MonsterState>
     protected override void Start()
     {
         base.Start();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        //默认是移动状态
         ChangeState<Monster_Idle>(MonsterState.Monster_Idle);
 
     }
@@ -55,22 +59,44 @@ public class Monster_Controller : Character_Controller<MonsterState>
 
     protected override void Update()
     {
-        if (isRepel)
+        base.Update();
+       
+        if (navMeshAgent.enabled == false)
         {
-            currentRepelTime += Time.deltaTime;
-            //用hurtTime的时间移动hurtVelocity的距离
-            characterController.Move(repelVelocity * Time.deltaTime/ repelTime);
-            if (currentRepelTime >= repelTime) isRepel = false;
-        }
-        else
-        {
-            characterController.Move(new Vector3(0, -9f, 0) * Time.deltaTime);
+            if (isRepel)
+            {
+                currentRepelTime += Time.deltaTime;
+                //用hurtTime的时间移动hurtVelocity的距离
+                characterController.Move(repelVelocity * Time.deltaTime / repelTime);
+                if (currentRepelTime >= repelTime) isRepel = false;
+            }
+            else
+            {
+                characterController.Move(new Vector3(0, -9f, 0) * Time.deltaTime);
+            }
         }
     }
 
+    #region 导航
+    public void StartMove()
+    {
+        navMeshAgent.enabled = true;
+    }
+    public void StopMove()
+    {
+        navMeshAgent.enabled = false;
+    }
+
+    //设置导航目标
+    public void SetNavigationTarget(Vector3 targer)
+    {
+        navMeshAgent.SetDestination(targer);
+    }
+
+    #endregion
+
     #region 战斗逻辑
-    
+
     #endregion
 
 }
-    

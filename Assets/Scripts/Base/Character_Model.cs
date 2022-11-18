@@ -86,6 +86,11 @@ public class Character_Model<T> : Character_Model
         animator.SetTrigger("受伤结束");
     }
 
+    public void SetAnimation(string name, bool bl)
+    {
+        animator.SetBool(name, bl);
+    }
+
 
     #region 动画事件
     public void StartSkillHit(int weaponIndex)
