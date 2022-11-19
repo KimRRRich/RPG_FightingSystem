@@ -23,8 +23,8 @@ public class Monster_Move : Monster_StateBase
         float dis = Vector3.Distance(player.transform.position, monster.transform.position);
         if (dis < 1)
         {
-            //TODO ÇÐ»»¹¥»÷×´Ì¬
-            //return;
+            monster.ChangeState<Monster_Attack>(MonsterState.Monster_Attack);
+            return;
         }
         if (dis > 6)
         {

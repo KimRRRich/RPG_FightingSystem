@@ -26,8 +26,12 @@ public class SkillModel
                 CurrTime = 0;
                 canRelease = true;
             }
-            //更新UI
-            CDimage.fillAmount = CurrTime / CDTime;
+            if (CDimage != null)
+            {
+                //更新UI
+                CDimage.fillAmount = CurrTime / CDTime;
+            }
+           
         }
     }
 

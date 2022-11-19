@@ -11,4 +11,11 @@ public class Monster_Model : Character_Model<MonsterState>
         base.Init(character);
         monster = character as Monster_Controller;
     }
+
+    protected override void OnSkillOver()
+    {
+       
+        monster.ChangeState<Monster_Idle>(MonsterState.Monster_Idle);
+    }
+
 }

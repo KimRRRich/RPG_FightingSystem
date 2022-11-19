@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class Monster_Idle : Monster_StateBase
 {
-    public override void OnEnter()
-    {
-        //Debug.Log("Monster_Idle");
-        //model.SetAnimation("≈‹",false);
-        //monster.StopMove();
-        
-    }
+    public override void OnEnter(){ }
 
-    public override void OnExit()
-    {
-        //throw new System.NotImplementedException();
-    }
+    public override void OnExit() { }
 
     public override void OnUpdate()
     {
@@ -24,9 +15,10 @@ public class Monster_Idle : Monster_StateBase
         float dis = Vector3.Distance(player.transform.position, monster.transform.position);
         if (dis < 1)
         {
-            //TODO:Ω¯»Îπ•ª˜
+            monster.ChangeState<Monster_Attack>(MonsterState.Monster_Attack);
+            return;
         }
-        if (dis < 6)
+        else if (dis < 6)
         {
             //TODO:◊∑◊ŸÕÊº“
             monster.ChangeState<Monster_Move>(MonsterState.Monster_Move);

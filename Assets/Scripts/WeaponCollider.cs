@@ -48,7 +48,7 @@ public class WeaponCollider : MonoBehaviour
             //敌人逻辑
             enemyList.Add(other.gameObject);
             //实际输出伤害给敌人
-            other.GetComponent<Monster_Controller>().Hurt(hitModel.HardTime,model.transform,hitModel.RepelVelocity,hitModel.RepelTransitionTime,hitModel.DamageValue);
+            other.GetComponent<HurtEnter>().Hurt(hitModel.HardTime,model.transform,hitModel.RepelVelocity,hitModel.RepelTransitionTime,hitModel.DamageValue);
             
             //命中 生成相关的逻辑
             if (hitModel.SkillHitEF != null)

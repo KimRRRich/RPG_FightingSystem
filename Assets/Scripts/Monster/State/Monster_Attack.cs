@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_Attack : StateBase<MonsterState>
+public class Monster_Attack : Monster_StateBase
 {
+    //ÊÇ·ñ¹¥»÷
+    private bool isAttack;
     public override void OnEnter()
     {
-        throw new System.NotImplementedException();
+        monster.StopMove();
+        isAttack = false;
     }
 
     public override void OnExit()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public override void OnUpdate()
     {
-        throw new System.NotImplementedException();
+        if (isAttack == false)
+        {
+            isAttack = monster.Attack();
+        }
     }
 }

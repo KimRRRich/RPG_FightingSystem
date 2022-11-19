@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
+//[ RequireComponent(HurtEnter)]
 public abstract class Character_Controller<T> : FSMControl<T>
 {
     public new AudioController audio { get; protected set; }
@@ -25,6 +27,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
         //TODO:模型层重构
         model.Init(this);
         characterController = GetComponent<CharacterController>();
+        gameObject.AddComponent<HurtEnter>().action = Hurt;
     }
     protected override void Update()
     {
@@ -45,8 +48,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
     #region 战斗相关
     public Conf_SkillData CurrSkillData { get; protected set; }
 
-    //当前的技能编号
-    protected int currSkillIndex = -1;
+    
 
     public void PlayAudio(AudioClip audioClip)
     {

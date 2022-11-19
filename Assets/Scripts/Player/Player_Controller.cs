@@ -72,11 +72,14 @@ public class Player_Controller : Character_Controller<PlayerState>
         ChangeState<Player_Move>(PlayerState.Player_Move);
     }
 
-   
+
 
     #region  战斗相关
     // 当前的技能
-    
+
+    //当前的技能编号
+    protected int currSkillIndex = -1;
+
     // 当前是第几段攻击(普攻)
     private int currAttackIndex = 0;
     public int CurrAttackIndex

@@ -1261,7 +1261,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.059678968, y: 9.864416e-10, z: -5.8974936e-11, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678964, y: -0.0000000065159926, z: 3.8956202e-10, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.9649999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1504,7 +1504,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693295099}
-  m_LocalRotation: {x: 0.059678968, y: 9.864416e-10, z: -5.8974936e-11, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678964, y: -0.0000000065159926, z: 3.8956202e-10, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.9649999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1703,10 +1703,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6659153952884678051, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6659153952884678062, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1751,14 +1747,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6659153954557395217, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
-      propertyPath: EnemyTargetNames.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659153954557395217, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
-      propertyPath: EnemyTargetNames.Array.data[0]
-      value: Monster
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 986098887fb6fe1439db7cca2804582b, type: 3}
 --- !u!1001 &8462747067447199214
@@ -1768,10 +1756,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2601710831183013382, guid: cc2237232e9074d4db71022304daf860, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8462747068204995360, guid: cc2237232e9074d4db71022304daf860, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1815,6 +1799,10 @@ PrefabInstance:
     - target: {fileID: 8462747068204995360, guid: cc2237232e9074d4db71022304daf860, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462747068204995361, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: SkillModels.Array.data[0].CDTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8462747068204995362, guid: cc2237232e9074d4db71022304daf860, type: 3}
       propertyPath: m_Name

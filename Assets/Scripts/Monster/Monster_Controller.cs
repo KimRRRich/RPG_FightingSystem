@@ -96,6 +96,23 @@ public class Monster_Controller : Character_Controller<MonsterState>
     #endregion
 
     #region 战斗逻辑
+    public bool Attack()
+    {
+        if (model.canSwitch == false) return false;
+
+        //有什么技能 放什么技能
+        for(int i = 0; i < SkillModels.Length; i++)
+        {
+            if (SkillModels[i].canRelease)
+            {
+                CurrSkillData = SkillModels[i].SkillData;
+                model.StartAttack(CurrSkillData);
+                SkillModels[i].OnRelese();
+                return true;
+            }
+        }
+        return false; 
+    }
 
     #endregion
 

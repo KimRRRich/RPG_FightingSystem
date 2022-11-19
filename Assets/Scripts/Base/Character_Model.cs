@@ -9,7 +9,7 @@ public abstract class Character_Model : MonoBehaviour
     public List<string> EnemyTargetNames;
 }
 
-public class Character_Model<T> : Character_Model
+public abstract class Character_Model<T> : Character_Model
 {
     protected Character_Controller<T> character;
     protected Animator animator;
@@ -132,7 +132,7 @@ public class Character_Model<T> : Character_Model
         }
     }
 
-    protected virtual void OnSkillOver() { }
+    protected abstract void OnSkillOver();
 
     //技能可以切换
     private void SkillCanSwitch()

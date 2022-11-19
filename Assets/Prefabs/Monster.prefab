@@ -265,7 +265,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
-  SkillModels: []
+  SkillModels:
+  - SkillData: {fileID: 11400000, guid: 379d3047792f99140b6d5b7ab26ca447, type: 2}
+    KeyCode: 0
+    CDTime: 0
+    CDimage: {fileID: 0}
 --- !u!143 &8462747068204995390
 CharacterController:
   m_ObjectHideFlags: 0
@@ -461,6 +465,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f13e5c664d32a9e4faecc19dcb5d1e0f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: ef8258ce753f2fb419e9d22588d8d1f7, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef8258ce753f2fb419e9d22588d8d1f7, type: 3}
 --- !u!4 &6260823133168856639 stripped
