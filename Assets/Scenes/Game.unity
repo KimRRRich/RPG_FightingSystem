@@ -1261,7 +1261,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.059678964, y: -0.0000000065159926, z: 3.8956202e-10, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678968, y: 9.864412e-10, z: -5.897489e-11, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.9649999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1504,7 +1504,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693295099}
-  m_LocalRotation: {x: 0.059678964, y: -0.0000000065159926, z: 3.8956202e-10, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678968, y: 9.864412e-10, z: -5.897489e-11, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.9649999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1801,9 +1801,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8462747068204995361, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: SkillModels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462747068204995361, guid: cc2237232e9074d4db71022304daf860, type: 3}
       propertyPath: SkillModels.Array.data[0].CDTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462747068204995361, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: SkillModels.Array.data[1].CDTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8462747068204995361, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: SkillModels.Array.data[0].SkillData
+      value: 
+      objectReference: {fileID: 11400000, guid: 532b06bdeebf3f94fb63626380ea9301, type: 2}
+    - target: {fileID: 8462747068204995361, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: SkillModels.Array.data[1].SkillData
+      value: 
+      objectReference: {fileID: 11400000, guid: 379d3047792f99140b6d5b7ab26ca447, type: 2}
     - target: {fileID: 8462747068204995362, guid: cc2237232e9074d4db71022304daf860, type: 3}
       propertyPath: m_Name
       value: Monster

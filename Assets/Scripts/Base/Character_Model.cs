@@ -74,11 +74,19 @@ public abstract class Character_Model<T> : Character_Model
 
     private int currHurtAnimationIndex = 1;
 
-    public void PlayHurtAnimation()
+    public void PlayHurtAnimation(bool isFloat = false)
     {
-        animator.SetTrigger("受伤" + currHurtAnimationIndex);
-        if (currHurtAnimationIndex == 1) currHurtAnimationIndex = 2;
-        else currHurtAnimationIndex = 1;
+        if (isFloat)
+        {
+            animator.SetTrigger("击飞");
+        }
+        else
+        {
+            animator.SetTrigger("受伤" + currHurtAnimationIndex);
+            if (currHurtAnimationIndex == 1) currHurtAnimationIndex = 2;
+            else currHurtAnimationIndex = 1;
+        }
+        
     }
 
     public void StopHurtAnimation()
@@ -91,6 +99,13 @@ public abstract class Character_Model<T> : Character_Model
         animator.SetBool(name, bl);
     }
 
+    public void RestWeapon()
+    {
+        for(int i = 0; i < WeaponConllider.Length; i++)
+        {
+            WeaponConllider[i].StopSkillHit();
+        }
+    }
 
     #region 动画事件
     public void StartSkillHit(int weaponIndex)
@@ -135,7 +150,7 @@ public abstract class Character_Model<T> : Character_Model
     protected abstract void OnSkillOver();
 
     //技能可以切换
-    private void SkillCanSwitch()
+    public void SkillCanSwitch()
     {
         canSwitch = true;
     }

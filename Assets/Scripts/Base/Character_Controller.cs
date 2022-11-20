@@ -80,32 +80,28 @@ public abstract class Character_Controller<T> : FSMControl<T>
     public void Hurt(float hardTime, Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime, int damageValue)
     {
         //硬直与播放动画
-        model.PlayHurtAnimation();
+        model.PlayHurtAnimation(repelVelocity.y>0.5f);
         //取消之前可能还在执行中的硬直
         CancelInvoke("HurtOver");
         Invoke("HurtOver", hardTime);
-
-        //击退击飞
-        //isRepel = true;
-        //this.repelVelocity = sourceTransform.TransformDirection(repelVelocity);
-        //repelTime = repelTransitionTime;
-        //currentRepelTime = 0.0f;
-
         OnHurt(sourceTransform, repelVelocity, repelTransitionTime);
 
         //生命值减少
-        hp -= damageValue;
+        Hp -= damageValue;
+        model.SkillCanSwitch();
+        model.RestWeapon();
     }
 
-    protected virtual void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
-    {
+    protected abstract void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime);
 
-    }
 
     public void HurtOver()
     {
         model.StopHurtAnimation();
+        OnHurtOver();
     }
+
+    protected abstract void OnHurtOver();
 
     #endregion
 }

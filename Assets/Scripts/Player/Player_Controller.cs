@@ -72,6 +72,14 @@ public class Player_Controller : Character_Controller<PlayerState>
         ChangeState<Player_Move>(PlayerState.Player_Move);
     }
 
+    protected override void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
+    {
+        //TODO:玩家的伤害逻辑
+    }
+    protected override void OnHurtOver()
+    {
+        //TODO: 玩家受伤结束逻辑
+    }
 
 
     #region  战斗相关
@@ -167,8 +175,6 @@ public class Player_Controller : Character_Controller<PlayerState>
         };
 
     }
-
-    
     #endregion
 
 

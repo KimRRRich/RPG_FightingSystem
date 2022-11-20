@@ -20,16 +20,8 @@ public class Monster_Controller : Character_Controller<MonsterState>
     //private int hp = 100;
     private NavMeshAgent navMeshAgent;
 
-    //是否击飞
-    private bool isRepel;
-    //受击向量
-    private Vector3 repelVelocity;
-    //受击过渡时间
-    private float repelTime;
-    //现在时间
-    private float currentRepelTime;
-
     public override int Hp { get => hp; set => hp = value; }
+    public Vector3 moveMotion = new Vector3(0, -9, 0);
 
     protected override void Start()
     {
@@ -40,41 +32,29 @@ public class Monster_Controller : Character_Controller<MonsterState>
 
     }
 
-    protected override void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
-    {
-        base.OnHurt(sourceTransform, repelVelocity, repelTransitionTime);
-        //击退击飞
-        isRepel = true;
-        this.repelVelocity = sourceTransform.TransformDirection(repelVelocity);
-        repelTime = repelTransitionTime;
-        currentRepelTime = 0.0f;
-    }
-
-    //public void Start()
-    //{
-    //    model = transform.Find("Model").GetComponent<Monster_Model>();
-    //    characterController = transform.GetComponent<CharacterController>();
-    //    model.Init();
-    //}
-
     protected override void Update()
     {
         base.Update();
        
         if (navMeshAgent.enabled == false)
         {
-            if (isRepel)
-            {
-                currentRepelTime += Time.deltaTime;
-                //用hurtTime的时间移动hurtVelocity的距离
-                characterController.Move(repelVelocity * Time.deltaTime / repelTime);
-                if (currentRepelTime >= repelTime) isRepel = false;
-            }
-            else
-            {
-                characterController.Move(new Vector3(0, -9f, 0) * Time.deltaTime);
-            }
+            characterController.Move(moveMotion* Time.deltaTime);
         }
+    }
+
+    protected override void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
+    {
+        ChangeState<Monster_Hurt>(MonsterState.Monster_Hurt, true);
+        (CurrStateObj as Monster_Hurt).SetData(sourceTransform, repelVelocity, repelTransitionTime);
+    }
+    protected override void OnHurtOver()
+    {
+        ChangeState<Monster_Idle>(MonsterState.Monster_Idle);
+    }
+
+    public void StopRepel()
+    {
+        moveMotion.Set(0, -9, 0);
     }
 
     #region 导航
