@@ -26,8 +26,9 @@ MonoBehaviour:
       AudioClip: {fileID: 0}
       Position: {x: 0, y: 2, z: 0}
       Rotation: {x: 0, y: 90, z: 0}
+      Time: 0
     AudioClip: {fileID: 0}
-    CanRotate: 1
+    CanRotate: 0
   HitModels:
   - DamageValue: 10
     HardTime: 1.3
@@ -41,6 +42,7 @@ MonoBehaviour:
       AudioClip: {fileID: 0}
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
+      Time: 0
     AudioClip: {fileID: 8300000, guid: 2526231cfac8b144f872e951470d9acd, type: 3}
   EndModel:
     SpawnObj:
@@ -48,3 +50,4 @@ MonoBehaviour:
       AudioClip: {fileID: 0}
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
+      Time: 0

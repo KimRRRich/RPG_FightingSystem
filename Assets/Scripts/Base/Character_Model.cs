@@ -76,6 +76,10 @@ public abstract class Character_Model<T> : Character_Model
 
     public void PlayHurtAnimation(bool isFloat = false)
     {
+        if (skillData != null)
+        {
+            animator.ResetTrigger(skillData.TriggerName);
+        }
         if (isFloat)
         {
             animator.SetTrigger("ª˜∑…");
@@ -93,7 +97,10 @@ public abstract class Character_Model<T> : Character_Model
     {
         animator.SetTrigger(" ‹…ÀΩ· ¯");
     }
-
+    public void PlayDeadAnimation()
+    {
+        animator.SetTrigger("À¿Õˆ");
+    }
     public void SetAnimation(string name, bool bl)
     {
         animator.SetBool(name, bl);

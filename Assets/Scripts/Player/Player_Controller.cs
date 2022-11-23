@@ -14,7 +14,11 @@ public enum PlayerState
     // 移动
     Player_Move,
     // 攻击
-    Player_Attack
+    Player_Attack,
+    //受伤
+    Player_Hurt,
+    //死亡
+    Player_Dead
 }
 public class Player_Controller : Character_Controller<PlayerState>
 {
@@ -59,8 +63,6 @@ public class Player_Controller : Character_Controller<PlayerState>
     protected override void Start()
     {
         base.Start();
-        //model = transform.Find("Model").GetComponent<Player_Model>();
-        //model.Init(this);
         input = new Player_Input();
 
         impulseSource = GetComponent<CinemachineImpulseSource>();
@@ -72,14 +74,29 @@ public class Player_Controller : Character_Controller<PlayerState>
         ChangeState<Player_Move>(PlayerState.Player_Move);
     }
 
+    #region 受伤
     protected override void OnHurt(Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime)
     {
-        //TODO:玩家的伤害逻辑
+        currAttackIndex = 0;
+        ChangeState<Player_Hurt>(PlayerState.Player_Hurt, true);
+        (CurrStateObj as Player_Hurt).SetData(sourceTransform, repelVelocity, repelTransitionTime);
     }
     protected override void OnHurtOver()
     {
-        //TODO: 玩家受伤结束逻辑
+        ChangeState<Player_Move>(PlayerState.Player_Move);
     }
+    protected override void OnDead()
+    {
+        ChangeState<Player_Move>(PlayerState.Player_Move);
+        characterController.enabled = false;
+    }
+    //角色击飞击退移动
+    public void RepelMove(Transform sourceTransform,Vector3 target,float time)
+    {
+        StartCoroutine(DoCharacterAttackMove(sourceTransform.TransformDirection(target), time));
+    }
+    #endregion
+
 
 
     #region  战斗相关

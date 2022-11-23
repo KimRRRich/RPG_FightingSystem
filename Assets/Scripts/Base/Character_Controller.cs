@@ -14,6 +14,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
 
     //生命值
     protected int hp = 100;
+    public bool isDead { get; protected set; } = false;
     public abstract int Hp { get; set; }
 
     //技能的包装数据cd、按键
@@ -63,7 +64,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
         StartCoroutine(DoCharacterAttackMove(transform.TransformDirection(target), time));
     }
 
-    IEnumerator DoCharacterAttackMove(Vector3 target, float time)
+    protected IEnumerator DoCharacterAttackMove(Vector3 target, float time)
     {
         float currTime = 0;
         while (currTime < time)
@@ -79,15 +80,23 @@ public abstract class Character_Controller<T> : FSMControl<T>
 
     public void Hurt(float hardTime, Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime, int damageValue)
     {
-        //硬直与播放动画
-        model.PlayHurtAnimation(repelVelocity.y>0.5f);
-        //取消之前可能还在执行中的硬直
-        CancelInvoke("HurtOver");
-        Invoke("HurtOver", hardTime);
-        OnHurt(sourceTransform, repelVelocity, repelTransitionTime);
-
+        if (isDead) return;
         //生命值减少
         Hp -= damageValue;
+        if (Hp <= 0)
+        {
+            Dead();
+        }
+        else
+        {
+            //硬直与播放动画
+            model.PlayHurtAnimation(repelVelocity.y > 0.5f);
+            //取消之前可能还在执行中的硬直
+            CancelInvoke("HurtOver");
+            Invoke("HurtOver", hardTime);
+            OnHurt(sourceTransform, repelVelocity, repelTransitionTime);
+        }
+
         model.SkillCanSwitch();
         model.RestWeapon();
     }
@@ -102,6 +111,13 @@ public abstract class Character_Controller<T> : FSMControl<T>
     }
 
     protected abstract void OnHurtOver();
+    private void Dead()
+    {
+        isDead = true;
+        model.PlayDeadAnimation();
+        OnDead();
+    }
+    protected abstract void OnDead();
 
     #endregion
 }

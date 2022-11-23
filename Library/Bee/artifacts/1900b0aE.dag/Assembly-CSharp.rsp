@@ -402,6 +402,7 @@
 "Assets/Scripts/Player/Player_Input.cs"
 "Assets/Scripts/Player/Player_Model.cs"
 "Assets/Scripts/Player/State/Player_Attack.cs"
+"Assets/Scripts/Player/State/Player_Hurt.cs"
 "Assets/Scripts/Player/State/Player_Move.cs"
 "Assets/Scripts/Player/State/Player_StateBase.cs"
 "Assets/Scripts/PostProcessManager.cs"

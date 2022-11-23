@@ -19,7 +19,7 @@ public class Monster_Attack : Monster_StateBase
 
     public override void OnUpdate()
     {
-        if (isAttack == false)
+        if (isAttack == false&&player.isDead==false)
         {
             isAttack = monster.Attack();
         }

@@ -35,6 +35,11 @@ public class Monster_Controller : Character_Controller<MonsterState>
     protected override void Update()
     {
         base.Update();
+        if (isDead)
+        {
+            characterController.Move(moveMotion * Time.deltaTime);
+            return;
+        }
        
         if (navMeshAgent.enabled == false)
         {
@@ -51,7 +56,19 @@ public class Monster_Controller : Character_Controller<MonsterState>
     {
         ChangeState<Monster_Idle>(MonsterState.Monster_Idle);
     }
-
+    protected override void OnDead()
+    {
+        StopRepel();
+        ChangeState<Monster_Idle>(MonsterState.Monster_Idle);
+        StopMove();
+        Destroy(GetComponent<CapsuleCollider>());
+        //Destroy(GetComponent<CharacterController>());
+        Invoke("Destory", 5);
+    }
+    private void Destory()
+    {
+        Destroy(gameObject);
+    }
     public void StopRepel()
     {
         moveMotion.Set(0, -9, 0);
@@ -93,6 +110,8 @@ public class Monster_Controller : Character_Controller<MonsterState>
         }
         return false; 
     }
+
+  
 
     #endregion
 

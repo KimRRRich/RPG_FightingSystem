@@ -23,18 +23,9 @@ public class Player_Move : Player_StateBase
         }
     }
 
-
-    //public override void Init(FSMControl<PlayerState> controller, PlayerState stateType)
-    //{
-    //    base.Init(controller, stateType);
-    //    player = controller as Player_Controller;
-    //}
-
-   
-
     public override void OnUpdate()
     {
-        
+        if (player.isDead) return;
         float h = player.input.Horizontal;
         float v = player.input.Vertical;
 

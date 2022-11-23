@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Monster\State\Monster_StateBase.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Scripts\Interpolate.cs" />
+    <Compile Include="Assets\Scripts\Player\State\Player_Hurt.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Example\Scripts\LookAtTarget.cs" />
     <Compile Include="Assets\Scripts\Base\StateBase.cs" />
@@ -108,9 +109,11 @@
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft Scroll.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\_Effects\MuzzleFlashes\!MuzzleFlash Differences.txt" />
+    <None Include="Assets\Art\角色\主角\模型\诺艾尔\使用规则.txt" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Add Scroll.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+    <None Include="Assets\Art\角色\主角\模型\莫娜\使用规则.txt" />
     <None Include="Assets\Art\MeleeWeaponTrail\README.txt" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\_Effects (Mobile)\MuzzleFlashes\!MuzzleFlash Differences.txt" />
     <None Include="Assets\Art\角色\主角\模型\刻晴\readme【一定要看】.txt" />
@@ -118,11 +121,10 @@
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Particle Multiply A8.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend Scroll.shader" />
-    <None Include="Assets\Art\角色\主角\模型\可莉\使用规则.txt" />
+    <None Include="Assets\Shader\GenshinCharacterShaderZhihuVer.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Particle AddSoft A8.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\!WarFX Readme.txt" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Alpha-Diffuse TintColor.shader" />
-    <None Include="Assets\Art\角色\主角\模型\雷电将军\readme【一定要看】.txt" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend NoSoftParticles.shader" />
   </ItemGroup>
   <ItemGroup>

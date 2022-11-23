@@ -19,6 +19,11 @@ public class Monster_Move : Monster_StateBase
 
     public override void OnUpdate()
     {
+        if (player.isDead)
+        {
+            monster.ChangeState<Monster_Idle>(MonsterState.Monster_Idle);
+            return;
+        }
         monster.SetNavigationTarget(player.transform.position);
         float dis = Vector3.Distance(player.transform.position, monster.transform.position);
         if (dis < 1)
