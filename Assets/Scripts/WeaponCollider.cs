@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponCollider : MonoBehaviour
 {
     public BoxCollider BoxCollider;
+    public BoxCollider BoxCollider2;
     //public TrailRenderer TrailRenderer;
     public MeleeWeaponTrail MeleeWeaponTrail;
 
@@ -30,12 +31,14 @@ public class WeaponCollider : MonoBehaviour
     {
         this.hitModel = hitModel;
         BoxCollider.enabled = true;
+        BoxCollider2.enabled = true;
         MeleeWeaponTrail.Emit= true;
     }
 
     public void StopSkillHit()
     {
         BoxCollider.enabled = false;
+        BoxCollider2.enabled = false;
         MeleeWeaponTrail.Emit = false;
         enemyList.Clear();
     }

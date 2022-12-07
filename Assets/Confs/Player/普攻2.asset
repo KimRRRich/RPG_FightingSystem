@@ -29,6 +29,7 @@ MonoBehaviour:
       AudioClip: {fileID: 0}
       Position: {x: 0, y: 2, z: 0}
       Rotation: {x: 0, y: 90, z: 0}
+      Time: 0
     AudioClip: {fileID: 0}
     CanRotate: 1
   HitModels:
@@ -44,6 +45,7 @@ MonoBehaviour:
       AudioClip: {fileID: 0}
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
+      Time: 0
     AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
   EndModel:
     SpawnObj:
@@ -51,3 +53,4 @@ MonoBehaviour:
       AudioClip: {fileID: 0}
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
+      Time: 0

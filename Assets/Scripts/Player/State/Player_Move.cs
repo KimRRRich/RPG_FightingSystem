@@ -8,8 +8,11 @@ public class Player_Move : Player_StateBase
     //public Player_Controller player;
 
     private float runTransition = 0;
-    private float moveSpeed = 400f;
+    private float moveSpeed = 100f;
     private float rotateSpeed = 90f;
+
+    const float walkSpeed = 100f;
+    const float runSpeed = 180f;
 
     //private bool isRun;
     private bool isRun
@@ -17,8 +20,8 @@ public class Player_Move : Player_StateBase
         get
         {
             bool temp= player.input.GetRunKey() && player.input.Vertical > 0;
-            if (temp) moveSpeed = 800f;
-            else moveSpeed = 400f;
+            if (temp) moveSpeed = runSpeed;
+            else moveSpeed = walkSpeed;
             return temp;
         }
     }

@@ -15,7 +15,10 @@ MonoBehaviour:
   Name: "\u666E\u653B3"
   TriggerName: "\u666E\u901A\u653B\u51FB"
   OverTriggerName: "\u653B\u51FB\u7ED3\u675F"
-  CameraMoveModels: []
+  CameraMoveModels:
+  - Target: {x: 0, y: 0, z: 10}
+    Time: 1
+    BackTime: 1
   CharacterMoveModels:
   - Target: {x: 0, y: 0, z: 0.5}
     Time: 0.2

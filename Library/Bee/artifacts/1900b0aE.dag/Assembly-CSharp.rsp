@@ -389,6 +389,7 @@
 "Assets/Scripts/Conf/Conf_SkillData.cs"
 "Assets/Scripts/Conf/Conf_SkillHitEF.cs"
 "Assets/Scripts/Conf/SkillModel.cs"
+"Assets/Scripts/GameSetting.cs"
 "Assets/Scripts/HurtEnter.cs"
 "Assets/Scripts/Monster/Monster_Controller.cs"
 "Assets/Scripts/Monster/Monster_Model.cs"

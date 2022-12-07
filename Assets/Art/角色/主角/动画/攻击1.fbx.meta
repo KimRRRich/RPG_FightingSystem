@@ -77,16 +77,16 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1
-        functionName: SkillOver
-        data: "\u666E\u653B1"
+      - time: 0.6803206
+        functionName: SkillCanSwitch
+        data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.6841085
-        functionName: SkillCanSwitch
-        data: 
+      - time: 1
+        functionName: SkillOver
+        data: "\u666E\u653B1"
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
