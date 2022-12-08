@@ -57,61 +57,193 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\Player_Input.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ClampDistance2Constraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\FixedMultiNativeList.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\ShareData\IShareDataObject.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerWorker.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\CameraOrbit.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Data\RuntimeStatus.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Common\RenderMeshDeformer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\MeshUtility.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\ColliderComponent.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\BoneSpring\MagicaBoneSpring.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\MagicaSphereCollider.cs" />
     <Compile Include="Assets\Scripts\Skill\Skill2_Controller.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\CoreComponent\CoreComponent.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Data\IDataVerify.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\GizmoUtility.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Data\DebugData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Extensions\DataHashExtensions.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\MagicaCapsuleCollider.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_Move.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerWindData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Team\PhysicsTeam.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Team\PhysicsTeamData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\NativeArrayExtension.cs" />
     <Compile Include="Assets\Scripts\Monster\State\Monster_StateBase.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\AutoMove.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerComponent.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\MeshCloth\MagicaMeshCloth.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Avatar\MagicaAvatarRuntime.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\ClothSetup.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\VirtualMeshWorker.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Scripts\Interpolate.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_Hurt.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\TriangleBendConstraint.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\MathUtility.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Example\Scripts\LookAtTarget.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerParticleData.cs" />
     <Compile Include="Assets\Scripts\Base\StateBase.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\SpringMeshWorker.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Data\IEditorCloth.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Controller.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ClampRotationConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Avatar\MagicaAvatarAccess.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\CustomEditor\BezierParam.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Reduction\NearPointReduction.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\WindComponent\MagicaDirectionalWind.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\API\BaseClothAPI.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\FixedNativeList.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\ChunkData.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Reduction\PolygonLinkReduction.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\RenderMeshWorker.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\API\MagicaDirectionalWindAPI.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\AdjustRotationWorker.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Define\ErrorDefine.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\MagicaPhysicsManager.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\StopWatch\StopWatch.cs" />
     <Compile Include="Assets\Scripts\Conf\SkillModel.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_Wall.cs" />
     <Compile Include="Assets\Scripts\Base\Character_Controller.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\ModelController.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\PenetrationConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\FixedTransformAccessArray.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\Develop.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerTeamData.cs" />
     <Compile Include="Assets\Scripts\Monster\State\Monster_Dead.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Avatar\MagicaAvatarParts.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\MagicaPlaneCollider.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ClampPositionConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\VolumeConstraint.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Scripts\Monster\State\Monster_Idle.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerCompute.cs" />
     <Compile Include="Assets\Scripts\WeaponCollider.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_Attack.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\UpdateTimeManager.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\MeshParticleWorker.cs" />
     <Compile Include="Assets\Scripts\Conf\Conf_SkillHitEF.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\ObjectUtility.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Data\IBoneReplace.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\ShareData\ShareDataObject.cs" />
     <Compile Include="Assets\Scripts\Monster\State\Monster_Hurt.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Utility\Utility.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\TriangleWorker.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\SimpleInputManager.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerConstraint.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Example\Scripts\MouseMove.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\ReferenceDataIndex\ReferenceDataIndex.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\MeshSpring\MagicaMeshSpring.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\ShareData\IDataHash.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\BoneCloth\MagicaBoneCloth.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_DeleteAfterDelay.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ColliderAfterCollisionConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Data\MeshData.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Scripts\Conf\Conf_SkillData.cs" />
     <Compile Include="Assets\Scripts\Monster\State\Monster_Attack.cs" />
     <Compile Include="Assets\Scripts\Monster\Monster_Controller.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\API\MagicaPhysicsManagerAPI.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\API\MagicaAvatarAPI.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\ExNativeHashMap.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerBoneData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\EditUtility.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\WindComponent\WindComponent.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ClampDistanceConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Data\ReductionData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\ReferenceDataIndex\ReferenceDataBuilder.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\SliderStart.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Component\MagicaVirtualDeformer.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ConstraintCommon\CurveParam.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Data\IEditorMesh.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\ParticleComponent.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\RestoreRotationConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Define\ComputeDefine.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\DataUtility.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\SelectionData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Common\BaseMeshDeformer.cs" />
     <Compile Include="Assets\Scripts\Monster\Monster_Model.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Avatar\MagicaAvatar.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Data\FinalData.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\WindController.cs" />
     <Compile Include="Assets\Scripts\Skill\Skill3_Controller.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\ClothParams.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\CopyObject.cs" />
     <Compile Include="Assets\Scripts\HurtEnter.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Model.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ColliderCollisionConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\UIPartsItem.cs" />
     <Compile Include="Assets\Scripts\Base\Character_Model.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\API\Events\Events.cs" />
     <Compile Include="Assets\Art\MeleeWeaponTrail\Example\Scripts\SwooshTest.cs" />
     <Compile Include="Assets\Scripts\Monster\State\Monster_Move.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Define\MeshDefine.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Grid\NearPointSearch.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\CreateSingleton.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Other\StaticStringBuilder.cs" />
     <Compile Include="Assets\Scripts\PostProcessManager.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\FixedNativeListWithCount.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\ClothData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\BoneClothTarget.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\FixedChunkNativeArray.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\AutoRotate.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\SpringConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerAccess.cs" />
     <Compile Include="Assets\Scripts\Base\FSMController.cs" />
     <Compile Include="Assets\Scripts\Base\AudioController.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\LineWorker.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\Grid\GridHash.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\CFX_Demo_Translate.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\SpringData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\NativeCollection\ExNativeMultiHashMap.cs" />
+    <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\DressUpControl.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Core\ReductionMesh.cs" />
     <Compile Include="Assets\Scripts\Player\State\Player_StateBase.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Worker\BaseSkinningWorker.cs" />
+    <Compile Include="Assets\MagicaCloth\ReductionMesh\Core\ReductionMeshAccess.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Common\MeshData.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\API\CoreComponentAPI.cs" />
     <Compile Include="Assets\Scripts\GameSetting.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\RestoreDistanceConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Common\VirtualMeshDeformer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ColliderExtrusionConstraint.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Component\MagicaRenderDeformer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\EdgeCollisionConstraint.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\BaseCloth.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\PhysicsManagerMeshData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\Stage\AlphaMask.shader" />
     <None Include="Assets\Art\场景\Casual Tiny Environment - Jungle Set\Readme.txt" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft Scroll.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\_Effects\MuzzleFlashes\!MuzzleFlash Differences.txt" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
     <None Include="Assets\Art\角色\主角\模型\诺艾尔\使用规则.txt" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Add Scroll.shader" />
     <None Include="Assets\Shader\ToonShadowTexMultiStepsShader.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
@@ -124,12 +256,21 @@
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Particle Multiply A8.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend Scroll.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Unity-Chan License.txt" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+    <None Include="Assets\MagicaCloth\Readme.txt" />
     <None Include="Assets\Shader\ToonTwoStepsShader.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Particle AddSoft A8.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\!WarFX Readme.txt" />
+    <None Include="Assets\MagicaCloth\Readme_en.txt" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Alpha-Diffuse TintColor.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
     <None Include="Assets\Shader\ToonMultiStepsShader.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend NoSoftParticles.shader" />
+    <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -375,6 +516,24 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Program Files (x86)\Unity\2021.3.9f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
@@ -386,6 +545,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\Program Files (x86)\Unity\2021.3.9f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -805,6 +967,10 @@
       <Project>{4520301E-0DEA-C177-867D-7D966314C5AD}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Editor.csproj">
+      <Project>{3AB73227-794E-ACFA-4586-281B4E786F0E}</Project>
+      <Name>Unity.Burst.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{9655E06E-D46D-97D0-F151-E86A6A95B9B8}</Project>
       <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
@@ -849,13 +1015,29 @@
       <Project>{B2DFCD24-5FD3-8A32-7166-5BBE2DEDE188}</Project>
       <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{037D76F5-E7A9-7B05-4624-960D60F8DA43}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Animation.Rigging.csproj">
+      <Project>{F0EFADD6-9500-5FB5-4454-BEFF28AE9F76}</Project>
+      <Name>Unity.Animation.Rigging</Name>
+    </ProjectReference>
     <ProjectReference Include="Cinemachine.csproj">
       <Project>{6A711789-8C55-3612-D0CA-DF60E49E9988}</Project>
       <Name>Cinemachine</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Collections.Editor.csproj">
+      <Project>{A8CD7B34-1891-C789-0F05-4E368CF64B9F}</Project>
+      <Name>Unity.Collections.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Services.Core.Analytics.csproj">
       <Project>{C42D2A72-AF9C-885C-47D0-2DF5DEDFAB96}</Project>
       <Name>Unity.Services.Core.Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{B260B6D6-0276-9369-365B-E0B0514FD409}</Project>
+      <Name>Unity.Burst</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
       <Project>{8A51C0AA-52FB-ABAE-0DA2-270ADD3CE2E3}</Project>
@@ -864,6 +1046,10 @@
     <ProjectReference Include="com.unity.cinemachine.editor.csproj">
       <Project>{57BBB9D4-FB46-C209-BA2F-571FF83BCB87}</Project>
       <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Jobs.csproj">
+      <Project>{7DB095E6-9E41-D39A-151D-F03868A21942}</Project>
+      <Name>Unity.Jobs</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
       <Project>{097FD6C5-585B-0CED-FC7A-5CFC787974CC}</Project>
@@ -877,9 +1063,21 @@
       <Project>{956AF0F8-8340-4DF2-744E-DA87B5E54BB7}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{08CEE501-AA9A-92A4-3374-AFC328786C1C}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Collections.csproj">
+      <Project>{9E9F2C4A-F3F7-687C-7524-1F748884384A}</Project>
+      <Name>Unity.Collections</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
       <Project>{BF0E6515-3371-741C-7F8D-9C76A9889ECD}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Animation.Rigging.Editor.csproj">
+      <Project>{4F4B8AC9-9BE9-4432-0942-F853A9292F77}</Project>
+      <Name>Unity.Animation.Rigging.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{30E96251-D4AC-2105-32C6-DC4FCD0486D8}</Project>

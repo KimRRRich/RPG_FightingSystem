@@ -58,13 +58,13 @@
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Graph\HasScriptGraph.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Connections\ControlConnection.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Variables\IsVariableDefined.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\FlowGraph.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Variables\IsVariableDefined.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Math\Minimum.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\Physics2D\OnCollisionStay2D.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\Lifecycle\Start.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Control\SelectOnInteger.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\GUI\PointerEventUnit.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Control\SelectOnInteger.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Variables\Obsolete\IsVariableDefinedUnit.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Math\Scalar\ScalarDivide.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Ports\ControlOutputDefinition.cs" />
@@ -91,8 +91,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\FunctionArgs.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Math\Vector3\Vector3Distance.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\GUI\OnToggleValueChanged.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\LogicalExpression.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Time\WaitWhileUnit.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\LogicalExpression.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Variables\Obsolete\IsApplicationVariableDefined.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Control\For.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Math\Sum.cs" />
@@ -243,8 +243,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Connections\UnitRelation.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\EditorBinding\UnitFooterPortsAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Logic\Negate.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Graph\GetScriptGraph.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\GUI\OnPointerClick.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Graph\GetScriptGraph.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Connections\IUnitRelation.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Control\TryCatch.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Codebase\SetMember.cs" />
@@ -393,8 +393,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Math\Generic\GenericModulo.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\BinaryExpression.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Codebase\MemberUnit.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\GlobalEventUnit.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\Editor\OnDrawGizmosSelected.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\GlobalEventUnit.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Time\WaitUnit.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Nulls\NullCheck.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\Input\OnKeyboardInput.cs" />
@@ -403,8 +403,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\Physics2D\OnJointBreak2D.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Math\Vector2\Vector2Distance.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\GUI\GenericGuiEventUnit.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Control\If.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Events\Input\OnMouseOver.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Control\If.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Framework\Variables\Obsolete\IsObjectVariableDefined.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Ports\MissingValuePortInputException.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\EvaluationException.cs" />
@@ -715,6 +715,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:\Program Files (x86)\Unity\2021.3.9f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -727,14 +730,29 @@
     <Reference Include="DOTweenEditor">
       <HintPath>Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
@@ -747,6 +765,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>

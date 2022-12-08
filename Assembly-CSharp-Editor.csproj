@@ -56,8 +56,42 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MagicaCloth\Core\Utility\PointSelector\Editor\PointSelector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\BoneSpring\Editor\MagicaBoneSpringGizmoDrawer.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Common\Editor\DeformerGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Component\Editor\MagicaRenderDeformerInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\Editor\MagicaSphereColliderGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\WindComponent\Editor\MagicaDirectionalWindGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\Editor\MagicaCapsuleColliderGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Avatar\Editor\MagicaAvatarPartsInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\EditorExtension\Monitor\Editor\ClothMonitorAccess.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\MeshSpring\Editor\MagicaMeshSpringInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Avatar\Editor\MagicaAvatarInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\ShareData\Editor\ShareDataPrefabExtension.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\BoneCloth\Editor\MagicaBoneClothInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\Editor\ClothEditor.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\EditorExtension\HierarchyIcon\Editor\DrawClothIconInHierarchy.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Component\Editor\MagicaVirtualDeformerGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\EditorExtension\MenuItem\Editor\MenuItemScript.cs" />
     <Compile Include="Assets\Art\粒子\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\MeshSpring\Editor\MagicaMeshSpringGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\CustomEditor\Editor\EditorPresetUtility.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\ParticleComponent\Editor\MagicaPlaneColliderGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\BoneCloth\Editor\MagicaBoneClothGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\BoneSpring\Editor\MagicaBoneSpringInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\EditorExtension\Monitor\Editor\ClothMonitorUI.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\CustomEditor\Editor\EditorInspectorUtility.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Component\Editor\MagicaRenderDeformerGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\EditorExtension\Monitor\Editor\ClothMonitorMenu.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Utility\CustomEditor\Editor\CustomReorderableList.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Deformer\Component\Editor\MagicaVirtualDeformerInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Avatar\Editor\MagicaAvatarGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\MeshCloth\Editor\MagicaMeshClothGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\EditorExtension\About\Editor\AboutMenu.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\MeshCloth\Editor\MagicaMeshClothInspector.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\Editor\ClothGizmoDrawer.cs" />
+    <Compile Include="Assets\MagicaCloth\Core\Physics\Manager\Editor\MagicaPhysicsManagerInspector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -318,6 +352,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:\Program Files (x86)\Unity\2021.3.9f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -330,14 +367,29 @@
     <Reference Include="DOTweenEditor">
       <HintPath>Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
@@ -350,6 +402,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
@@ -796,6 +851,10 @@
       <Project>{4520301E-0DEA-C177-867D-7D966314C5AD}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Editor.csproj">
+      <Project>{3AB73227-794E-ACFA-4586-281B4E786F0E}</Project>
+      <Name>Unity.Burst.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{9655E06E-D46D-97D0-F151-E86A6A95B9B8}</Project>
       <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
@@ -840,13 +899,29 @@
       <Project>{B2DFCD24-5FD3-8A32-7166-5BBE2DEDE188}</Project>
       <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{037D76F5-E7A9-7B05-4624-960D60F8DA43}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Animation.Rigging.csproj">
+      <Project>{F0EFADD6-9500-5FB5-4454-BEFF28AE9F76}</Project>
+      <Name>Unity.Animation.Rigging</Name>
+    </ProjectReference>
     <ProjectReference Include="Cinemachine.csproj">
       <Project>{6A711789-8C55-3612-D0CA-DF60E49E9988}</Project>
       <Name>Cinemachine</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Collections.Editor.csproj">
+      <Project>{A8CD7B34-1891-C789-0F05-4E368CF64B9F}</Project>
+      <Name>Unity.Collections.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Services.Core.Analytics.csproj">
       <Project>{C42D2A72-AF9C-885C-47D0-2DF5DEDFAB96}</Project>
       <Name>Unity.Services.Core.Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{B260B6D6-0276-9369-365B-E0B0514FD409}</Project>
+      <Name>Unity.Burst</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
       <Project>{8A51C0AA-52FB-ABAE-0DA2-270ADD3CE2E3}</Project>
@@ -855,6 +930,10 @@
     <ProjectReference Include="com.unity.cinemachine.editor.csproj">
       <Project>{57BBB9D4-FB46-C209-BA2F-571FF83BCB87}</Project>
       <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Jobs.csproj">
+      <Project>{7DB095E6-9E41-D39A-151D-F03868A21942}</Project>
+      <Name>Unity.Jobs</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
       <Project>{097FD6C5-585B-0CED-FC7A-5CFC787974CC}</Project>
@@ -868,9 +947,21 @@
       <Project>{956AF0F8-8340-4DF2-744E-DA87B5E54BB7}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{08CEE501-AA9A-92A4-3374-AFC328786C1C}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Collections.csproj">
+      <Project>{9E9F2C4A-F3F7-687C-7524-1F748884384A}</Project>
+      <Name>Unity.Collections</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
       <Project>{BF0E6515-3371-741C-7F8D-9C76A9889ECD}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Animation.Rigging.Editor.csproj">
+      <Project>{4F4B8AC9-9BE9-4432-0942-F853A9292F77}</Project>
+      <Name>Unity.Animation.Rigging.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{30E96251-D4AC-2105-32C6-DC4FCD0486D8}</Project>

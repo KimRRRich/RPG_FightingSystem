@@ -38,6 +38,7 @@ public class Player_Model : Character_Model<PlayerState>
     {
         CameraModel model = skillData.CameraMoveModels[index];
         player.CameraMoveForAttack(model.Target, model.Time, model.BackTime);
+        Debug.Log("Cemara move");
     }
 
     protected override void OnSkillOver()
