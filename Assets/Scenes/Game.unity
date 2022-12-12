@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 321551601}
   - component: {fileID: 321551600}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: RightWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,8 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676f54db4f544684b8896b73d79e5f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoxCollider: {fileID: 1366923067}
-  BoxCollider2: {fileID: 321551601}
+  BoxCollider: {fileID: 321551601}
   MeleeWeaponTrail: {fileID: 207646953}
 --- !u!65 &321551601
 BoxCollider:
@@ -629,8 +628,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15055804, y: 0.27373278, z: 0.20591097}
-  m_Center: {x: 0.025737537, y: 0.029610759, z: -0.003930245}
+  m_Size: {x: 0.3113874, y: 0.38328555, z: 0.29263744}
+  m_Center: {x: 0.018429715, y: 0.08438776, z: -0.028964054}
 --- !u!4 &340142578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8756017000068314925, guid: fa893d30be1ac3f40a8841fe24d25a2f, type: 3}
@@ -2993,7 +2992,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.059678968, y: 9.864416e-10, z: -5.8974936e-11, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678964, y: -0.0000000065159926, z: 3.8956202e-10, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.6259999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5180,8 +5179,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1366923065}
   - component: {fileID: 1366923067}
+  - component: {fileID: 1366923068}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: LeftWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5213,8 +5213,22 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1394703, y: 0.25083032, z: 0.13059478}
-  m_Center: {x: 0.0028778643, y: 0.015731413, z: -0.019528333}
+  m_Size: {x: 0.268723, y: 0.33817056, z: 0.18206017}
+  m_Center: {x: 0.006929998, y: 0.05016951, z: -0.0100318855}
+--- !u!114 &1366923068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366923064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676f54db4f544684b8896b73d79e5f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoxCollider: {fileID: 1366923067}
+  MeleeWeaponTrail: {fileID: 207646953}
 --- !u!4 &1368061387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4484586303138264298, guid: fa893d30be1ac3f40a8841fe24d25a2f, type: 3}
@@ -5806,7 +5820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fa893d30be1ac3f40a8841fe24d25a2f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa893d30be1ac3f40a8841fe24d25a2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6038,7 +6052,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693295099}
-  m_LocalRotation: {x: 0.059678968, y: 9.864416e-10, z: -5.8974936e-11, w: 0.99821764}
+  m_LocalRotation: {x: 0.059678964, y: -0.0000000065159926, z: 3.8956202e-10, w: 0.99821764}
   m_LocalPosition: {x: 0, y: 1.6259999, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6257,6 +6271,7 @@ MonoBehaviour:
   EnemyTargetNames:
   - Monster
   WeaponConllider:
+  - {fileID: 1366923068}
   - {fileID: 321551600}
 --- !u!114 &1832097972
 MonoBehaviour:
@@ -6530,17 +6545,20 @@ MonoBehaviour:
   CurrentState: 0
   SkillModels:
   - SkillData: {fileID: 11400000, guid: dd77c358d3cb4e442aced2cf37fa5f5e, type: 2}
-    KeyCode: 107
-    CDTime: 10
+    KeyCode: 308
+    CDTime: 0.1
     CDimage: {fileID: 660278488}
+    canSwitchFromAttack: 0
   - SkillData: {fileID: 11400000, guid: 677dde0a3ef7db5409b3e941bb29d90b, type: 2}
     KeyCode: 108
     CDTime: 15
     CDimage: {fileID: 724468540}
+    canSwitchFromAttack: 0
   - SkillData: {fileID: 11400000, guid: b4873e88d26ec2e4a81ab090786f8f1f, type: 2}
     KeyCode: 117
     CDTime: 20
     CDimage: {fileID: 815007281}
+    canSwitchFromAttack: 1
   HPBarImg: {fileID: 639528584}
   StandAttackConfs:
   - {fileID: 11400000, guid: 418ae3d506f18f244805ae38ead8f3d5, type: 2}
@@ -6674,8 +6692,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6659153953006122708}
   - {fileID: 1832097969}
+  - {fileID: 6659153953006122708}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6842,13 +6860,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6659153953006122711}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.326, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6659153952910714750}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6659153953006122711
 GameObject:
@@ -6952,6 +6970,18 @@ PrefabInstance:
     - target: {fileID: 8462747068204995362, guid: cc2237232e9074d4db71022304daf860, type: 3}
       propertyPath: m_Name
       value: Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462747068204995363, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: m_Radius
+      value: 0.3535393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462747068204995363, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: m_Center.y
+      value: 0.91999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462747068204995363, guid: cc2237232e9074d4db71022304daf860, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0035392642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc2237232e9074d4db71022304daf860, type: 3}

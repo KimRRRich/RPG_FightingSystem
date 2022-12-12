@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: "\u666E\u653B3"
   m_EditorClassIdentifier: 
   Name: "\u666E\u653B3"
-  TriggerName: "\u666E\u901A\u653B\u51FB"
-  OverTriggerName: "\u653B\u51FB\u7ED3\u675F"
+  TriggerName: "\u666E\u653B3"
   CameraMoveModels:
   - Target: {x: 0, y: 0, z: 10}
     Time: 1
@@ -31,7 +30,7 @@ MonoBehaviour:
       Rotation: {x: 0, y: 90, z: 0}
       Time: 0
     AudioClip: {fileID: 0}
-    CanRotate: 0
+    CanRotate: 1
   HitModels:
   - DamageValue: 10
     HardTime: 1.3

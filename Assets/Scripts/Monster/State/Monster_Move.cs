@@ -7,13 +7,13 @@ public class Monster_Move : Monster_StateBase
     public override void OnEnter()
     {
         monster.StartMove();
-        model.SetAnimation("變", true);
+        model.PlayAnimation("變");
     }
 
     public override void OnExit()
     {
         monster.StopMove();
-        model.SetAnimation("變", false);
+        //model.SetAnimation("變", false);
 
     }
 
@@ -28,6 +28,7 @@ public class Monster_Move : Monster_StateBase
         float dis = Vector3.Distance(player.transform.position, monster.transform.position);
         if (dis < 1)
         {
+            monster.transform.LookAt(new Vector3(player.transform.position.x, monster.transform.position.y, player.transform.position.z));
             monster.ChangeState<Monster_Attack>(MonsterState.Monster_Attack);
             return;
         }

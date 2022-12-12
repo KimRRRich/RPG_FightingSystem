@@ -41,7 +41,7 @@ public abstract class Character_Model<T> : Character_Model
         currHitIndex = 0;
         skillData = conf;
         canSwitch = false;
-        animator.SetTrigger(skillData.TriggerName);
+        PlayAnimation(skillData.TriggerName);
 
         //生成单次的粒子
         SpawnObject(skillData.ReleaseModel.SpawnObj);
@@ -76,34 +76,39 @@ public abstract class Character_Model<T> : Character_Model
 
     public void PlayHurtAnimation(bool isFloat = false)
     {
-        if (skillData != null)
-        {
-            animator.ResetTrigger(skillData.TriggerName);
-        }
+        //if (skillData != null)
+        //{
+        //    animator.ResetTrigger(skillData.TriggerName);
+        //}
         if (isFloat)
         {
-            animator.SetTrigger("击飞");
+            PlayAnimation("击飞");
         }
         else
         {
-            animator.SetTrigger("受伤" + currHurtAnimationIndex);
+            PlayAnimation("受伤" + currHurtAnimationIndex);
             if (currHurtAnimationIndex == 1) currHurtAnimationIndex = 2;
             else currHurtAnimationIndex = 1;
         }
         
     }
 
-    public void StopHurtAnimation()
-    {
-        animator.SetTrigger("受伤结束");
-    }
+    //public void StopHurtAnimation()
+    //{
+    //    PlayAnimation("受伤结束");
+    //}
     public void PlayDeadAnimation()
     {
-        animator.SetTrigger("死亡");
+        PlayAnimation("死亡");
     }
-    public void SetAnimation(string name, bool bl)
+    //public void SetAnimation(string name, bool bl)
+    //{
+    //    animator.SetBool(name, bl);
+    //}
+
+    public void PlayAnimation(string name)
     {
-        animator.SetBool(name, bl);
+        animator.CrossFadeInFixedTime(name, 0.2f,0); 
     }
 
     public void RestWeapon()
@@ -120,7 +125,8 @@ public abstract class Character_Model<T> : Character_Model
         //开启刀光的拖尾
         //开启伤害检测的触发器
         WeaponConllider[weaponIndex].StartSkillHit(skillData.HitModels[currHitIndex]);
-
+        Debug.Log(weaponIndex);
+        //WeaponConllider[weaponIndex+1].StartSkillHit(skillData.HitModels[currHitIndex]);
 
         //生成单次攻击释放时的游戏物体/粒子
         //SpawnObject(skillData.HitModels[currHitIndex].SpawnObj);
@@ -137,6 +143,8 @@ public abstract class Character_Model<T> : Character_Model
         //关闭刀光的拖尾
         //关闭伤害检测的触发器
         WeaponConllider[weaponIndex].StopSkillHit();
+        Debug.Log("StopSkillHit(" + weaponIndex + ")");
+        //WeaponConllider[weaponIndex+1].StopSkillHit();
     }
 
 
@@ -148,7 +156,7 @@ public abstract class Character_Model<T> : Character_Model
             // 基于结束配置生成粒子/游戏物体
             SpawnObject(skillData.EndModel.SpawnObj);
             canSwitch = true;
-            animator.SetTrigger(skillData.OverTriggerName);
+            //animator.SetTrigger(skillData.OverTriggerName);
             OnSkillOver();
             Debug.Log("SkillOver!");
         }

@@ -12,6 +12,8 @@ public abstract class Character_Controller<T> : FSMControl<T>
 
     public CharacterController characterController { get; protected set; }
 
+    private CharacterEventAgent characterEventAgent;
+
     //生命值
     protected int hp = 100;
     public bool isDead { get; protected set; } = false;
@@ -28,7 +30,9 @@ public abstract class Character_Controller<T> : FSMControl<T>
         //TODO:模型层重构
         model.Init(this);
         characterController = GetComponent<CharacterController>();
-        gameObject.AddComponent<HurtEnter>().action = Hurt;
+        characterEventAgent = gameObject.AddComponent<CharacterEventAgent>();
+        characterEventAgent.hurtAction = Hurt;
+        characterEventAgent.isDead = isDead;
     }
     protected override void Update()
     {
@@ -66,16 +70,23 @@ public abstract class Character_Controller<T> : FSMControl<T>
 
     protected IEnumerator DoCharacterAttackMove(Vector3 target, float time)
     {
+        Vector3 startPos = this.transform.position;
+        Vector3 endPos = startPos + target;
         float currTime = 0;
         while (currTime < time)
         {
-            Vector3 moveDir = target * Time.deltaTime / time;
-            characterController.Move(moveDir);
+            //Vector3 moveDir = target * Time.deltaTime / time;
+            //Vector3 moveDir = new Vector3(1, 1, 1);
+            //characterController.Move(moveDir);
+            //currTime += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPos, endPos, currTime / time);
             currTime += Time.deltaTime;
+            //暂停一帧
+            yield return null;
+
 
         }
-        //暂停一帧
-        yield return null;
+        
     }
 
     public void Hurt(float hardTime, Transform sourceTransform, Vector3 repelVelocity, float repelTransitionTime, int damageValue)
@@ -106,7 +117,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
 
     public void HurtOver()
     {
-        model.StopHurtAnimation();
+        //model.StopHurtAnimation();
         OnHurtOver();
     }
 
@@ -114,6 +125,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
     private void Dead()
     {
         isDead = true;
+        characterEventAgent.isDead = isDead;
         model.PlayDeadAnimation();
         OnDead();
     }

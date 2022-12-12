@@ -66,7 +66,9 @@ public class Player_Move : Player_StateBase
 
     public override void OnEnter()
     {
+        if (player.isDead) return;
 
+        model.PlayAnimation("Move");
     }
         
     public override void OnExit()

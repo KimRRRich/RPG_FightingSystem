@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponCollider : MonoBehaviour
 {
     public BoxCollider BoxCollider;
-    public BoxCollider BoxCollider2;
+    //public BoxCollider BoxCollider2;
     //public TrailRenderer TrailRenderer;
     public MeleeWeaponTrail MeleeWeaponTrail;
 
@@ -31,27 +31,29 @@ public class WeaponCollider : MonoBehaviour
     {
         this.hitModel = hitModel;
         BoxCollider.enabled = true;
-        BoxCollider2.enabled = true;
+        //BoxCollider2.enabled = true;
         MeleeWeaponTrail.Emit= true;
     }
 
     public void StopSkillHit()
     {
         BoxCollider.enabled = false;
-        BoxCollider2.enabled = false;
+        //BoxCollider2.enabled = false;
         MeleeWeaponTrail.Emit = false;
         enemyList.Clear();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    private void OnTriggerStay(Collider other){
         //保证一段伤害对一个敌人只造成一段伤害
+        Debug.Log("OnTriggerEnter");
         if (model.EnemyTargetNames.Contains(other.tag) && !enemyList.Contains(other.gameObject))
         {
             //敌人逻辑
             enemyList.Add(other.gameObject);
+
+            CharacterEventAgent enemy = other.GetComponent<CharacterEventAgent>();
             //实际输出伤害给敌人
-            other.GetComponent<HurtEnter>().Hurt(hitModel.HardTime,model.transform,hitModel.RepelVelocity,hitModel.RepelTransitionTime,hitModel.DamageValue);
+            enemy.Hurt(hitModel.HardTime,model.transform,hitModel.RepelVelocity,hitModel.RepelTransitionTime,hitModel.DamageValue);
             
             //命中 生成相关的逻辑
             if (hitModel.SkillHitEF != null)
@@ -70,6 +72,7 @@ public class WeaponCollider : MonoBehaviour
                 //命中 效果相关的逻辑
                 if (hitModel.WantScreenImpulse) player_Model.ScreenImpulse();
                 if (hitModel.WantChramaticAberration) PostProcessManager.Instance.ChromaticAberrationEF();
+                Debug.Log("玩家击中");
 
                 //生成单次释放时的游戏物体/粒子
                 model.SpawnObject(hitModel.SpawnObj);

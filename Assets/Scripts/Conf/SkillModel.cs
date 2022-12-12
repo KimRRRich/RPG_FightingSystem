@@ -14,6 +14,7 @@ public class SkillModel
     public Image CDimage;
 
     public bool canRelease { get; private set; } = true;
+    public bool canSwitchFromAttack;
     public void Update()
     {
         //≤ªƒ‹ Õ∑≈

@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: "\u666E\u653B1"
   m_EditorClassIdentifier: 
   Name: "\u666E\u653B1"
-  TriggerName: "\u666E\u901A\u653B\u51FB"
-  OverTriggerName: "\u653B\u51FB\u7ED3\u675F"
+  TriggerName: "\u666E\u653B1"
   CameraMoveModels: []
   CharacterMoveModels: []
   SpawnObjs: []

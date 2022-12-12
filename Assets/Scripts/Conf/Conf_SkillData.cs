@@ -13,7 +13,7 @@ public class Conf_SkillData : ScriptableObject
     public string TriggerName;
 
     //技能结束触发的动画TriggerName
-    public string OverTriggerName;
+    //public string OverTriggerName;
 
     //相机位移的数据集合
     public CameraModel[] CameraMoveModels;

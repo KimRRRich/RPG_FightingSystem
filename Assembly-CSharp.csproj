@@ -188,7 +188,7 @@
     <Compile Include="Assets\Scripts\Skill\Skill3_Controller.cs" />
     <Compile Include="Assets\MagicaCloth\Core\Cloth\Common\ClothParams.cs" />
     <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\CopyObject.cs" />
-    <Compile Include="Assets\Scripts\HurtEnter.cs" />
+    <Compile Include="Assets\Scripts\CharacterEventAgent.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Model.cs" />
     <Compile Include="Assets\MagicaCloth\Core\Physics\Constraint\ColliderCollisionConstraint.cs" />
     <Compile Include="Assets\MagicaCloth\Example (Can be deleted)\Scripts\UIPartsItem.cs" />
@@ -240,7 +240,6 @@
     <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\_Effects\MuzzleFlashes\!MuzzleFlash Differences.txt" />
     <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Art\角色\主角\模型\诺艾尔\使用规则.txt" />
     <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />
     <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
@@ -250,7 +249,6 @@
     <None Include="Assets\Art\角色\主角\模型\莫娜\使用规则.txt" />
     <None Include="Assets\Art\MeleeWeaponTrail\README.txt" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\_Effects (Mobile)\MuzzleFlashes\!MuzzleFlash Differences.txt" />
-    <None Include="Assets\Art\角色\主角\模型\刻晴\readme【一定要看】.txt" />
     <None Include="Assets\Shader\ToonShadowTexTwoStepsShader.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Particle Add A8.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
