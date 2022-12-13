@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player_Model : Character_Model<PlayerState>
 {
     private Player_Controller player;
+    public GameObject Weapon;
 
     public override void Init(Character_Controller<PlayerState> character)
     {
@@ -45,6 +46,18 @@ public class Player_Model : Character_Model<PlayerState>
     {
         player.CurrAttackIndex = 0;
         player.ChangeState<Player_Move>(PlayerState.Player_Move);
+    }
+
+    public void SetActiveWeapon()
+    {
+        Debug.Log("SetActiveWeapon");
+        Weapon.SetActive(true);
+    }
+
+    public void DisableWeapon()
+    {
+        Debug.Log("DisableWeapon");
+        Weapon.SetActive(false);
     }
 
 

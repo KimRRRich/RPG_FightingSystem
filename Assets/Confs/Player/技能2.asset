@@ -16,8 +16,8 @@ MonoBehaviour:
   TriggerName: "\u6280\u80FD2"
   CameraMoveModels: []
   CharacterMoveModels:
-  - Target: {x: 0, y: 0, z: 1}
-    Time: 3
+  - Target: {x: 0, y: 0, z: 2}
+    Time: 1
   SpawnObjs:
   - Prefab: {fileID: 7354707219729012627, guid: a195976775a367b46827bd9a64966fc2, type: 3}
     AudioClip: {fileID: 0}

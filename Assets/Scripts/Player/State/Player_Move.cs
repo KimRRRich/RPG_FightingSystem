@@ -34,10 +34,12 @@ public class Player_Move : Player_StateBase
 
         if (v >= 0)
         {
-            if (isRun && runTransition < 1)  runTransition += Time.deltaTime / 2;
-            else if(!isRun&&runTransition>0) runTransition -= Time.deltaTime / 2;
+            //if (isRun && runTransition < 1)  runTransition += Time.deltaTime /2;
+            //else if(!isRun&&runTransition>0) runTransition -= Time.deltaTime / 2;
+            if (isRun && runTransition < 1) runTransition += Time.deltaTime/2 ;
+            else if (!isRun && runTransition > 0) runTransition -= Time.deltaTime/2 ;
         }
-        else if(runTransition > 0) runTransition -= Time.deltaTime / 2;
+        else if(runTransition > 0) runTransition -= Time.deltaTime;
 
 
         Move(h, v+runTransition);

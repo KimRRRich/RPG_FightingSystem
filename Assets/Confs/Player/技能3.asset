@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u6280\u80FD3"
   TriggerName: "\u6280\u80FD3"
-  OverTriggerName: "\u6280\u80FD\u7ED3\u675F"
   CameraMoveModels: []
-  CharacterMoveModels: []
+  CharacterMoveModels:
+  - Target: {x: 0, y: 0, z: 1}
+    Time: 1
+  - Target: {x: 0, y: 0, z: 1}
+    Time: 1
+  - Target: {x: 0, y: 0, z: 1}
+    Time: 1
   SpawnObjs: []
   ReleaseModel:
     SpawnObj:
@@ -28,6 +33,34 @@ MonoBehaviour:
     AudioClip: {fileID: 0}
     CanRotate: 1
   HitModels:
+  - DamageValue: 10
+    HardTime: 1
+    RepelVelocity: {x: 0, y: 0, z: 1}
+    RepelTransitionTime: 0.2
+    WantScreenImpulse: 1
+    WantChramaticAberration: 1
+    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
+    SpawnObj:
+      Prefab: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Position: {x: 0, y: 0, z: 1.9}
+      Rotation: {x: 0, y: 0, z: 0}
+      Time: 0.3
+    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+  - DamageValue: 10
+    HardTime: 1
+    RepelVelocity: {x: 0, y: 0, z: 1}
+    RepelTransitionTime: 0.2
+    WantScreenImpulse: 1
+    WantChramaticAberration: 1
+    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
+    SpawnObj:
+      Prefab: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Position: {x: 0, y: 0, z: 1.9}
+      Rotation: {x: 0, y: 0, z: 0}
+      Time: 0.3
+    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
   - DamageValue: 10
     HardTime: 1
     RepelVelocity: {x: 0, y: 0, z: 2}

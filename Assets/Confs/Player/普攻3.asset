@@ -19,7 +19,7 @@ MonoBehaviour:
     Time: 1
     BackTime: 1
   CharacterMoveModels:
-  - Target: {x: 0, y: 0, z: 0.5}
+  - Target: {x: 0, y: 0, z: 0.3}
     Time: 0.2
   SpawnObjs: []
   ReleaseModel:

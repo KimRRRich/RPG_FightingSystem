@@ -7,6 +7,7 @@ public abstract class Character_Model : MonoBehaviour
     public abstract void PlayAudio(AudioClip audioClip);
     public abstract void SpawnObject(Skill_SpawnObj spawn);
     public List<string> EnemyTargetNames;
+    //public GameObject Weapon;
 }
 
 public abstract class Character_Model<T> : Character_Model
@@ -126,6 +127,7 @@ public abstract class Character_Model<T> : Character_Model
         //开启伤害检测的触发器
         WeaponConllider[weaponIndex].StartSkillHit(skillData.HitModels[currHitIndex]);
         Debug.Log(weaponIndex);
+        
         //WeaponConllider[weaponIndex+1].StartSkillHit(skillData.HitModels[currHitIndex]);
 
         //生成单次攻击释放时的游戏物体/粒子

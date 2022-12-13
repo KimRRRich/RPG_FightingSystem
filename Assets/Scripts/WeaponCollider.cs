@@ -43,6 +43,8 @@ public class WeaponCollider : MonoBehaviour
         enemyList.Clear();
     }
 
+  
+
     private void OnTriggerStay(Collider other){
         //保证一段伤害对一个敌人只造成一段伤害
         Debug.Log("OnTriggerEnter");
