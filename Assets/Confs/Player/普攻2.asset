@@ -38,14 +38,14 @@ MonoBehaviour:
     RepelTransitionTime: 0
     WantScreenImpulse: 1
     WantChramaticAberration: 1
-    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
+    SkillHitEF: {fileID: 11400000, guid: 1bca3e380c896a94885eaff4a170e153, type: 2}
     SpawnObj:
       Prefab: {fileID: 0}
       AudioClip: {fileID: 0}
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Time: 0
-    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+    AudioClip: {fileID: 8300000, guid: 6b9d12f1f84d79d4ba2db8e1679a97e2, type: 3}
   EndModel:
     SpawnObj:
       Prefab: {fileID: 0}

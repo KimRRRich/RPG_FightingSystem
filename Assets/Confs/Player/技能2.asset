@@ -47,7 +47,7 @@ MonoBehaviour:
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Time: 0
-    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+    AudioClip: {fileID: 0}
   - DamageValue: 10
     HardTime: 1
     RepelVelocity: {x: 0, y: 0, z: 0.5}
@@ -61,7 +61,7 @@ MonoBehaviour:
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Time: 0
-    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+    AudioClip: {fileID: 0}
   - DamageValue: 10
     HardTime: 1
     RepelVelocity: {x: 0, y: 0, z: 1.5}
@@ -75,7 +75,7 @@ MonoBehaviour:
       Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Time: 0
-    AudioClip: {fileID: 8300000, guid: b2432d1254e131541b104851e2a54f7f, type: 3}
+    AudioClip: {fileID: 0}
   EndModel:
     SpawnObj:
       Prefab: {fileID: 0}

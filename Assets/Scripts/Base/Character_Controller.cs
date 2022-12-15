@@ -96,6 +96,8 @@ public abstract class Character_Controller<T> : FSMControl<T>
         Hp -= damageValue;
         if (Hp <= 0)
         {
+            //CancelInvoke("HurtOver");
+            CancelInvoke("DoCharacterAttackMove");
             Dead();
         }
         else
@@ -104,6 +106,7 @@ public abstract class Character_Controller<T> : FSMControl<T>
             model.PlayHurtAnimation(repelVelocity.y > 0.5f);
             //取消之前可能还在执行中的硬直
             CancelInvoke("HurtOver");
+            CancelInvoke("DoCharacterAttackMove");
             Invoke("HurtOver", hardTime);
             OnHurt(sourceTransform, repelVelocity, repelTransitionTime);
         }
