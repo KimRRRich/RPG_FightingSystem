@@ -47,7 +47,7 @@ public class WeaponCollider : MonoBehaviour
 
     private void OnTriggerStay(Collider other){
         //保证一段伤害对一个敌人只造成一段伤害
-        Debug.Log("OnTriggerEnter");
+        //Debug.Log("OnTriggerEnter");
         if (model.EnemyTargetNames.Contains(other.tag) && !enemyList.Contains(other.gameObject))
         {
             //敌人逻辑

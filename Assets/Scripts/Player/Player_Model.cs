@@ -54,6 +54,19 @@ public class Player_Model : Character_Model<PlayerState>
         Weapon.SetActive(true);
     }
 
+    public void ChangeTimeSpeedStart(float n)
+    {
+        Debug.Log("ChangeTimeSpeedStart" + n);
+        Time.timeScale = n;
+        //Time.maximumDeltaTime = n;
+        //Time.fixedDeltaTime = n * UNITY_DEFAULT_STEP;
+    }
+    public void ChangeTimeSpeedEnd()
+    {
+        Time.timeScale = 1;
+        Debug.Log("ChangeTimeSpeedEnd!");
+    }
+
     public void DisableWeapon()
     {
         Debug.Log("DisableWeapon");
