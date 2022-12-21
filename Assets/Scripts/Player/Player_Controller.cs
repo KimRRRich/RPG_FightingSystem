@@ -23,6 +23,7 @@ public enum PlayerState
 public class Player_Controller : Character_Controller<PlayerState>
 {
     public static Player_Controller Instance;
+    public GameObject UISetting;
     public Player_Input input { get; private set; }
     //public Player_Model model { get; protected set; }
 
@@ -58,6 +59,7 @@ public class Player_Controller : Character_Controller<PlayerState>
     private void Awake()
     {
         Instance = this;
+        UISetting = GameObject.Find("ÓÎÏ·Ö÷¿Ø½Å±¾");
     }
 
     protected override void Start()
@@ -89,6 +91,7 @@ public class Player_Controller : Character_Controller<PlayerState>
     {
         ChangeState<Player_Move>(PlayerState.Player_Move);
         characterController.enabled = false;
+        UISetting.GetComponent<GameSetting>().PlayerDead();
     }
     //½ÇÉ«»÷·É»÷ÍËÒÆ¶¯
     public void RepelMove(Transform sourceTransform,Vector3 target,float time)

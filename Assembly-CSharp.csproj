@@ -265,6 +265,7 @@
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S Alpha-Diffuse TintColor.shader" />
     <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
     <None Include="Assets\Shader\ToonMultiStepsShader.shader" />
+    <None Include="Assets\Art\角色\敌人\模型\使用规则.txt" />
     <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\MagicaCloth\Example (Can be deleted)\UnityChan\Model\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\Art\粒子\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend NoSoftParticles.shader" />
