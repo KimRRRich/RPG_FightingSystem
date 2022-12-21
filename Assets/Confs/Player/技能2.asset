@@ -54,7 +54,7 @@ MonoBehaviour:
     RepelTransitionTime: 0.2
     WantScreenImpulse: 1
     WantChramaticAberration: 1
-    SkillHitEF: {fileID: 11400000, guid: 7563c6da65f308d44b6faed8b49e5ab5, type: 2}
+    SkillHitEF: {fileID: 11400000, guid: 1bca3e380c896a94885eaff4a170e153, type: 2}
     SpawnObj:
       Prefab: {fileID: 0}
       AudioClip: {fileID: 0}
